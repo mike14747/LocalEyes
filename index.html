@@ -19,10 +19,13 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- Initialize Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
     <!-- moment.js reference -->
     <script src="js/moment.js"></script>
 
-    <!-- include my bootstrap companion style sheet -->
+    <!-- include our bootstrap companion style sheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>Local-eyes</title>
@@ -30,59 +33,63 @@
 
 <body class="bg-light">
 
+    <!--
+    // login area
+    <h1>LocalEyes Login</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    -->
+
     <div class="container border my-4 bg-white">
 
-        <div>
-
-            <header class="row border-bottom  align-items-center justify-content-between">
-                <div class="col p-4">
-                    <h1>Local-Eyes Header Area</h1>
-                </div>
-                <div class="col text-right p-4">
-                    <button>Login</button>
-                </div>
-            </header>
-
-            <div id="about_us" class="row p-4">
-                <div class="col-12">
-                    <div class="border p-4">
-                        <p>Here's the info scrolling by about us and why to use our site.</p>
-                        <p>Use our site to do this thing.</p>
-                        <p>Use our site to do this other thing.</p>
-                        <p>Use us to blah, blah, blah.</p>
-                    </div>
-
-                </div>
+        <header class="row border-bottom  align-items-center justify-content-between">
+            <div class="col-10 mr-auto p-4">
+                <h1>Local-Eyes Header Area</h1>
             </div>
-
-            <div id="search_criteria" class="row p-4">
-                <div class="col-12">
-                    <div class="border p-4">
-                        <p>This will be the area where you pick what you want to search for.</p>
-                        <p>Enter zip code here</p>
-                        <p>Check these other things to include.</p>
-                        <p>You can uncheck group of things to search for.</p>
-                    </div>
-
-                </div>
+            <div class="col-2 text-right p-4">
+                <button id="login_button">Login</button>
+                <button id="logout_button" class="d-none">Logout</button>
             </div>
+        </header>
 
-            <div id="results_row" class="row p-4">
+        <div id="about_us" class="row p-4">
+            <div class="col-12">
+                <div class="border p-4">
+                    <p>Here's the info scrolling by about us and why to use our site.</p>
+                    <p>Use our site to do this thing.</p>
+                    <p>Use our site to do this other thing.</p>
+                    <p>Use us to blah, blah, blah.</p>
+                </div>
 
             </div>
+        </div>
 
-            <footer class="row border-top">
-                <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
-                    <span class="small">Copyright &#169; 2019 LocalEyes</span>
+        <div id="search_criteria" class="row p-4">
+            <div class="col-12">
+                <div class="border p-4">
+                    <p>This will be the area where you pick what you want to search for.</p>
+                    <p>Enter zip code here</p>
+                    <p>Check these other things to include.</p>
+                    <p>You can uncheck group of things to search for.</p>
                 </div>
-            </footer>
+            </div>
+        </div>
+
+        <div id="results_row" class="row p-4 d-none">
 
         </div>
 
+        <footer class="row border-top">
+            <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
+                <span class="small">Copyright &#169; 2019 LocalEyes</span>
+            </div>
+        </footer>
+
     </div>
 
-    <!-- my javascript -->
+    <!-- our javascript -->
     <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 
