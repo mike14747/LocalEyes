@@ -43,13 +43,17 @@
 
     <div class="container border my-4 bg-white">
 
-        <header class="row border-bottom  align-items-center justify-content-between">
-            <div class="col-10 mr-auto p-4">
-                <h1>Local-Eyes Header Area</h1>
+        <header class="row border-bottom header_bg align-items-start">
+            <div class="col mr-auto p-4">
+                <h1>LocalEyes</h1>
             </div>
-            <div class="col-2 text-right p-4">
+            <div class="col text-right p-4">
                 <button id="login_button">Login</button>
                 <button id="logout_button" class="d-none">Logout</button>
+                <form class="mt-5">
+                    <input id="zip_code" type="text" maxlength="5">
+                    <button id="submit_zip" type="submit">Submit</button>
+                </form>
             </div>
         </header>
 
@@ -112,8 +116,7 @@
 
         </div>
 
-        <!---->
-        // login area
+        <!-- login area -->
         <h1>LocalEyes Login</h1>
         <div id="firebaseui-auth-container"></div>
         <div id="loader">Loading...</div>
@@ -130,6 +133,8 @@
     <!-- our javascript -->
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/yelp.js"></script>
+    <script src="js/census.js"></script>
 
 </body>
 

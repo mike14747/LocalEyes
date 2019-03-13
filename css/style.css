@@ -1,3 +1,9 @@
+.header_bg {
+    background-image: url("../images/skyline.png");
+    background-repeat: no-repeat;
+    min-height: 180px;
+}
+
 .carousel-caption {
     position: absolute;
     right: 15%;
@@ -8,9 +14,9 @@
     padding-bottom: 20px;
     color: #fff;
     text-align: center;
-  }
+}
 
-  .car_width {
+.car_width {
     max-width: 800px;
     margin: 0 auto;
-  }
+}
