@@ -1,22 +1,22 @@
 .header_bg {
     background-image: url("../images/skyline.png");
     background-repeat: no-repeat;
-    min-height: 180px;
+    min-height: 166px;
 }
 
-.carousel-caption {
+#zip_code {
+    max-width: 100px;
+}
+
+#search_div {
     position: absolute;
-    right: 15%;
-    top: 0;
-    left: 15%;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #fff;
-    text-align: center;
-}
-
-.car_width {
-    max-width: 800px;
-    margin: 0 auto;
+    bottom: 0px;
+    right: 0px;
+    border-top: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-radius: 5px;
+    margin-right: 1.5rem;
+    background-color: #ffffff;
+    padding: 0.50rem 0.50rem 0 0.50rem;
 }
