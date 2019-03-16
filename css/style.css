@@ -1,0 +1,22 @@
+.header_bg {
+    background-image: url("../images/skyline.png");
+    background-repeat: no-repeat;
+    min-height: 166px;
+}
+
+#zip_code {
+    max-width: 100px;
+}
+
+#search_div {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-top: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-radius: 5px;
+    margin-right: 1.5rem;
+    background-color: #ffffff;
+    padding: 0.50rem 0.50rem 0 0.50rem;
+}
