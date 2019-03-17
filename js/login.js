@@ -21,31 +21,34 @@ var uiConfig = {
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      firebase.auth.GithubAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-    ],
-    // Terms of service url.
-    // tosUrl: '<your-tos-url>',
-    // Privacy policy url.
-    // privacyPolicyUrl: '<your-privacy-policy-url>'
+      firebase.auth.GithubAuthProvider.PROVIDER_ID
+    ]
   };
 
-// will start the ui method  after the DOM is loaded.
+// this will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
 function logOut() {
     firebase.auth().signOut();
 }
 
+function logIn() {
+    $("#loginModal").modal("show");
+}
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // user is signed in
-        
+        console.log("Yes");
+        $("#log_in").hide();
+        $("#loginModal").modal("hide");
+        $("#log_out").show();
+        $("#user_state").text("User IS signed in!");
     } else {
         // user is not signed in
-        
+        console.log("No");
+        $("#log_in").show();
+        $("#log_out").hide();
+        $("#user_state").text("User is NOT signed in!")
     }
 });

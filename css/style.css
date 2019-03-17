@@ -20,3 +20,7 @@
     background-color: #ffffff;
     padding: 0.50rem 0.50rem 0 0.50rem;
 }
+
+.display_none {
+    display: none;
+}
