@@ -1,23 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
@@ -28,12 +38,17 @@
 
     <!-- FirebaseUI files-->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
 
     <!-- include our bootstrap companion style sheet -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- Font Awesome reference -->
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -75,13 +90,35 @@
                     <div id="loader">Loading...</div>
                 </div>
             </div>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <title>LocalEyes</title>
+  </head>
+
+  <body class="bg-light">
+    <div class="container-responsive border my-4 bg-white topcontainer">
+      <header
+        class="row border-bottom header_bg align-items-start position-relative"
+      >
+        <div class="mr-auto p-2">
+          <h1>LocalEyes</h1>
+        </div>
+        <div>
+          <!-- login/logout button area -->
+          <div id="log_out" class="display_none p-2 text-right">
+            <button onclick="logOut()">Log Out</button>
+          </div>
+          <div id="log_in" class="display_none p-2 text-right">
+            <button onclick="logIn()">Log In</button>
+          </div>
         </div>
 
-        <div class="row my-4">
-            <div class="mx-auto">
-                <p id="user_state"></p>
-            </div>
-        </div>
 
         <div id="results_row" class="row p-4 d-none">
             <!-- info about this zip code -->
@@ -129,21 +166,89 @@
 
                 </div>
             </div>
+
+        <div id="search_div" class="search-box">
+          <input
+            class="search-txt"
+            id="zip_code_search"
+            type="text"
+            maxlength="5"
+            placeholder="Enter Zipcode"
+          />
+          <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
         </div>
+      </header>
 
-        <footer class="row border-top">
-            <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
-                <span class="small">Copyright &#169; 2019 mike14747</span>
-            </div>
-        </footer>
+      <!-- Login Modal -->
+      <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content text-center py-4">
+            <h4>LocalEyes Login</h4>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+          </div>
 
+        </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="mx-auto">
+          <p id="user_state"></p>
+        </div>
+      </div>
+
+      <div id="results_row" class="row p-4 d-none">
+        <!-- info about this zip code -->
+        <div id="zip_info" class="card m-2 d-none" style="max-width: 25rem;">
+          <div class="card-header">
+            Zip Code Info
+          </div>
+          <div id="zip_card" class="card-body"></div>
+        </div>
+        <!-- current weather forecast (next 4 hours) -->
+        <div
+          id="weather_info"
+          class="card m-2 d-none"
+          style="max-width: 25rem;"
+        >
+          <div class="card-header">
+            Current Weather
+          </div>
+          <div id="weather_card" class="card-body"></div>
+        </div>
+        <!-- census info -->
+        <div id="census_info" class="card m-2 d-none" style="max-width: 25rem;">
+          <div class="card-header">
+            Census.gov Info (this zip)
+          </div>
+          <div id="census_card" class="card-body"></div>
+        </div>
+        <!-- census info -->
+        <div
+          id="census_avg_info"
+          class="card m-2 d-none"
+          style="max-width: 25rem;"
+        >
+          <div class="card-header">
+            Census.gov (US Avg)
+          </div>
+          <div id="census_avg_card" class="card-body"></div>
+        </div>
+      </div>
+
+      <footer class="row border-top">
+        <div
+          class="col-sm-12 p-2 d-flex align-items-center justify-content-center"
+        >
+          <span class="small">Copyright &#169; 2019 mike14747</span>
+        </div>
+      </footer>
     </div>
 
     <!-- our javascript -->
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
     <script src="js/parks.js"></script>
-
-</body>
-
+    <script src="js/census.js"></script>
+  </body>
 </html>
