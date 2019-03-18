@@ -161,6 +161,7 @@ function zipSearch(zip) {
             $("#zip_card").append("<p><b>Area Code: </b>" + response[0].area_code + "</p>");
             $("#zip_card").append("<p><b>Time Zone: </b>" + response[0].time_zone + "</p>");
             // weather(lat, lon);
+            parkSearch(lat,lon);
         }
     });
     return;
