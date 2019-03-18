@@ -49,6 +49,8 @@ function zipSearch(zip) {
     }).then(function (response) {
         if (response.length > 0) {
             $("#zip_info").removeClass("d-none");
+            $("#zip_header").empty();
+            $("#zip_header").append(zipCode + " Info");
             $("#zip_card").empty();
             $("#zip_card").append("<p><b>City: </b>" + response[0].city_name + "</p>");
             $("#zip_card").append("<p><b>State: </b>" + response[0].province + "</p>");

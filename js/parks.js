@@ -1,6 +1,5 @@
 var hpapikey = '&key=200431910-75a8709c24c09cae9d1a234790e13e78';// hiking project APIkey
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
-console.log("parks js loaded");
 function parkData(data) {//data in imperial 
     $("#parks_info").removeClass("d-none");
     $("#parks_card").empty();
