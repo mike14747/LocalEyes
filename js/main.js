@@ -16,7 +16,7 @@ var config = {
 firebase.initializeApp(config);
 
 function weather(zip) {
-    // openweathermap.org api
+    // openweathermap.org api (60 free calls per minute)
     var apiKey = "4245352a3814173935fcebaa7e744e45";
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?zip=" + zip + "&units=imperial&cnt=1&APPID=" + apiKey;
 
@@ -141,7 +141,7 @@ function censusAvg() {
 }
 
 function zipSearch(zip) {
-    // zipcodedownload.com api key
+    // zipcodedownload.com api key (500 free call per month)
     var apiKey = "4af80d5a852a405d9baad6ce23a015b0";
     var queryURL = "https://zipcodedownload.com:5430/Filter?format=json&citytype=d&cityname=&postalcode=" + zip + "&country=us5&key=" + apiKey;
 
