@@ -24,10 +24,6 @@
   .search-box:hover > .search-btn {
     background: white;
   }
-
-  .search-btn {
-    display: show;
-  }
 }
 @media only screen and (min-width: 641px) {
   .search-txt {
@@ -43,9 +39,24 @@
     line-height: 40px;
     padding: 0px, 0px, 4px, 0px;
   }
-  .search-btn {
-    display: hidden;
-  }
+}
+.submit_button {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.login_button {
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  margin: 10px;
+}
+
+.display_none {
+  display: none;
 }
 
 .search-btn {
@@ -84,8 +95,4 @@
     height: 40px;
     border-radius: 40px;
   }
-}
-
-.display_none {
-  display: none;
 }

@@ -71,12 +71,14 @@
         </div>
         <div>
           <!-- login/logout button area -->
+          <div class="login_div">
           <div id="log_out" class="display_none p-2 text-right">
             <button onclick="logOut()">Log Out</button>
           </div>
-          <div id="log_in" class="display_none p-2 text-right">
+          <div id="log_in" class="display_none p-2 text-right login_button">
             <button onclick="logIn()">Log In</button>
           </div>
+        </div>
         </div>
         <div id="search_div" class="search-box">
           <input
@@ -88,7 +90,11 @@
           />
           <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
         </div>
-        <button id="submit_zip" type="submit">Submit</button>
+        <div class="submit_div"
+        <button id="submit_zip" class="submit_button" type="submit">
+          Submit
+        </button>
+    </div>
       </header>
 
       <!-- Login Modal -->
