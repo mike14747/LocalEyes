@@ -19,17 +19,14 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-
     <!-- Firebase App is always required and must be first -->
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
 
     <!-- Add additional services that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
 
-    <!-- Add Firebase UI files -->
+    <!-- FirebaseUI files-->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
@@ -40,8 +37,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- Font Awesome reference -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 
     <title>LocalEyes</title>
 </head>
@@ -54,6 +51,15 @@
             <div class="mr-auto p-2">
                 <h1>LocalEyes</h1>
             </div>
+            <div>
+                <!-- login/logout button area -->
+                <div id="log_out" class="display_none p-2 text-right">
+                    <button onclick="logOut()">Log Out</button>
+                </div>
+                <div id="log_in" class="display_none p-2 text-right">
+                    <button onclick="logIn()">Log In</button>
+                </div>
+            </div>
             <div id="search_div">
                 <form class="d-inline-block">
                     <label for="zip_code_search">Zip Code: </label>
@@ -62,6 +68,24 @@
                 </form>
             </div>
         </header>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center py-4">
+                    <h4>LocalEyes Login</h4>
+                    <p>Login via Google or GutHub</p>
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="mx-auto">
+                <p id="user_state"></p>
+            </div>
+        </div>
 
         <div id="results_row" class="row p-4 d-none">
             <!-- info about this zip code -->
@@ -85,7 +109,7 @@
             <!-- census info -->
             <div id="census_info" class="card m-2 d-none" style="max-width: 25rem;">
                 <div class="card-header">
-                    Census.gov Info
+                    Census.gov Info (this zip)
                 </div>
                 <div id="census_card" class="card-body">
 
@@ -94,21 +118,13 @@
             <!-- census info -->
             <div id="census_avg_info" class="card m-2 d-none" style="max-width: 25rem;">
                 <div class="card-header">
-                    Census.gov Avg
+                    Census.gov (US Avg)
                 </div>
                 <div id="census_avg_card" class="card-body">
 
                 </div>
             </div>
         </div>
-
-        <!-- login area -->
-        <div class="d-none">
-            <h1>LocalEyes Login</h1>
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>
-        </div>
-
 
         <footer class="row border-top">
             <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
