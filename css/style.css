@@ -24,6 +24,9 @@
   .search-box:hover > .search-btn {
     background: white;
   }
+  .search-btn {
+    display: show;
+  }
 }
 
 @media only screen and (min-width: 641px) {
@@ -40,6 +43,9 @@
     transition: 0.4s;
     line-height: 40px;
     padding: 0px, 0px, 4px, 0px;
+  }
+  .search-btn {
+    display: hidden;
   }
 }
 
