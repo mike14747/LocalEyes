@@ -4,7 +4,9 @@ var longitude = "-81.70";
 //get trails call to pull trails from hiking project api, + lat + long and +max distance in miles from that point and api key attached
 //test query url 
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
+
 console.log("parks js loaded");
+
 function parkData(data) {//data in imperial 
 
     var trails = data.trails;
@@ -12,8 +14,8 @@ function parkData(data) {//data in imperial
     console.log(data);
 
     for (var trailIndex = 0 ; trailIndex < trails.length ; trailIndex ++ ) {
-        var tdata = trails[trailIndex];//Trail data object handle from hiking project API
 
+        var tdata = trails[trailIndex];//---------Trail data object handle from hiking project API
         var tName = tdata.name; //----------------Trail name
         var trailID = tdata.id;//-----------------Trail ID number to find more info
         var tAscent =  tdata.ascent;//------------Trail Ascent in imperial scale in feet (#')
