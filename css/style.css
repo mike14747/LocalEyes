@@ -125,11 +125,14 @@ body {
   }
 }
 
+.clearfix {
+  overflow: auto;
+}
+
 .search-box {
-  float: clear both;
   position: absolute;
   top: 75%;
-  left: 76%;
+  left: 75%;
   background: #2f3640;
   height: 40px;
   border-radius: 40px;
@@ -144,7 +147,7 @@ body {
   float: left;
   color: white;
   line-height: 40px;
-  width: 200;
+  width: 200px;
   text-align: center;
   font-size: 24px;
   padding: auto;
@@ -266,6 +269,18 @@ body {
 
 .display_none {
   display: none;
+}
+
+.card {
+  border: 2px solid #e84118;
+}
+
+.card .card-header {
+  background-color: #f18805;
+}
+
+.card .card-body {
+  background-color: #ffff99;
 }
 
 #footer {
