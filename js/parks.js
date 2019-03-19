@@ -1,18 +1,17 @@
 var hpapikey = '&key=200431910-75a8709c24c09cae9d1a234790e13e78';// hiking project APIkey
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
-
-console.log("parks js loaded");
-
 function parkData(data) {//data in imperial 
     $("#parks_info").removeClass("d-none");
     $("#parks_card").empty();
     var trails = data.trails;
 
-    // console.log(data);
-
     for (var trailIndex = 0; trailIndex < trails.length; trailIndex++) {
         var tdata = trails[trailIndex];//Trail data object handle from hiking project API
-        $("#parks_card").append("<p><b>Trail Name: </b>" + tdata.name + "</p>");
+        $("#parks_card").append("<p><b>Trail Name: </b><a href='" + tdata.url + "' target='_blank'>" + tdata.name + "</a></p>");
+        $("#parks_card").append("<img src='" + tdata.imgSmall + "' alt='" + tdata.name + "'>");
+        $("#parks_card").append("<p><b>Trail Length: </b>" + tdata.length + " miles</p>");
+        $("#parks_card").append("<p><b>Rating: </b>" + tdata.stars + " stars (" + tdata.starVotes + " reviews)</p>");
+        $("#parks_card").append("<hr />");
         var tName = tdata.name; //----------------Trail name
         var trailID = tdata.id;//-----------------Trail ID number to find more info
         var tAscent = tdata.ascent;//------------Trail Ascent in imperial scale in feet (#')
@@ -35,28 +34,6 @@ function parkData(data) {//data in imperial
         var tStarNum = tdata.starVotes;//---------Trails number of Star reviews
         var tDescription = tdata.summary;//-------Description Sentence of the Trail
         var tLink = tdata.url;//------------------URL to take user to trail web page on hikingproject.com
-
-        /*
-        console.log("Trail name: " + tName);
-        console.log("Location: " + tCity);
-        console.log("Latitude: " + tLat);
-        console.log("Longitude: " + tLong);
-        console.log("Trail ID Number: " + trailID);
-        console.log("Ascent in feet: " + tAscent);
-        console.log("Descent in feet: " + tDescent);
-        console.log("Trail Difficulty: " + tDiff);
-        console.log("Trail High in feet: " + tHigh);
-        console.log("Trail Low in feet: " + tLow);
-        console.log("Trail Length In Miles: " + tLength);
-        console.log("Rated: " + tStars + " Stars. By: " + tStarNum + " Votes");
-        console.log("Summary Sentence: " + tDescription);
-        console.log("large img: " + tLGimg);
-        console.log("Medium img: " + tMDimg);
-        console.log("Small img: " + tSMimg);
-        console.log("Small Square img: " + tXSimg);
-        console.log("WEB URL: " + tLink);
-        console.log("-------------------------------------------------------------------------------------");
-        */
     }
 }
 function parkSearch(latt, long) {

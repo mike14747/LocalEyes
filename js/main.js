@@ -4,6 +4,7 @@ var regExp = /^(\d{5})?$/;
 var zipCode = "";
 var lat = "";
 var lon = "";
+var direction = "";
 
 var config = {
     apiKey: "AIzaSyB8QUFbKw8DxQ5Hcj17exFgjy_gcXGjPXk",
@@ -27,12 +28,15 @@ function weather(zip) {
         if (response.cod == 200) {
             $("#weather_info").removeClass("d-none");
             $("#weather_card").empty();
-            $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'></div>");
-            $("#weather_card").append("<p><b>Temperature: </b>" + response.list[0].main.temp + "</p>");
+            $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'><span class='pl-4'>" + response.list[0].weather[0].main + "</span></div>");
+            $("#weather_card").append("<p><b>Temperature: </b>" + Math.round(response.list[0].main.temp) + "&deg;</p>");
             $("#weather_card").append("<p><b>Humidity: </b>" + response.list[0].main.humidity + "</p>");
-            $("#weather_card").append("<p><b>Wind Speed: </b>" + response.list[0].wind.speed + "</p>");
-            $("#weather_card").append("<p><b>Wind Direction: </b>" + response.list[0].wind.deg + "</p>");
-            $("#weather_card").append("<p><b>Summary: </b>" + response.list[0].weather[0].main + "</p>");
+            $("#weather_card").append("<p><b>Wind Speed: </b>" + Math.round(response.list[0].wind.speed) + " mph</p>");
+            var dir = response.list[0].wind.deg;
+            if (dir > 337.5 && dir < 22.5) {
+                direction = "N"
+            }
+            $("#weather_card").append("<p><b>Wind Direction: </b>" +  + "</p>");
         }
     });
     return;
@@ -49,6 +53,8 @@ function zipSearch(zip) {
     }).then(function (response) {
         if (response.length > 0) {
             $("#zip_info").removeClass("d-none");
+            $("#zip_header").empty();
+            $("#zip_header").append(zipCode + " Info");
             $("#zip_card").empty();
             $("#zip_card").append("<p><b>City: </b>" + response[0].city_name + "</p>");
             $("#zip_card").append("<p><b>State: </b>" + response[0].province + "</p>");
@@ -78,5 +84,6 @@ $("#submit_zip").on("click", function (event) {
         weather(zipCode);
         census(zipCode);
         censusAvg();
+        yelpZipSearch(zipCode);
     }
 });
