@@ -28,7 +28,7 @@ function weather(zip) {
             $("#weather_info").removeClass("d-none");
             $("#weather_card").empty();
             $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'></div>");
-            $("#weather_card").append("<p><b>Temperature: </b>" + response.list[0].main.temp + "</p>");
+            $("#weather_card").append("<p><b>Temperature: </b>" + response.list[0].main.temp + "&deg;</p>");
             $("#weather_card").append("<p><b>Humidity: </b>" + response.list[0].main.humidity + "</p>");
             $("#weather_card").append("<p><b>Wind Speed: </b>" + response.list[0].wind.speed + "</p>");
             $("#weather_card").append("<p><b>Wind Direction: </b>" + response.list[0].wind.deg + "</p>");

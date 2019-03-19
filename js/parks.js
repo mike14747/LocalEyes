@@ -5,11 +5,13 @@ function parkData(data) {//data in imperial
     $("#parks_card").empty();
     var trails = data.trails;
 
-    // console.log(data);
-
     for (var trailIndex = 0; trailIndex < trails.length; trailIndex++) {
         var tdata = trails[trailIndex];//Trail data object handle from hiking project API
-        $("#parks_card").append("<p><b>Trail Name: </b>" + tdata.name + "</p>");
+        $("#parks_card").append("<p><b>Trail Name: </b><a href='" + tdata.url + "' target='_blank'>" + tdata.name + "</a></p>");
+        $("#parks_card").append("<img src='" + tdata.imgSmall + "' alt='" + tdata.name + "'>");
+        $("#parks_card").append("<p><b>Trail Length: </b>" + tdata.length + " miles</p>");
+        $("#parks_card").append("<p><b>Rating: </b>" + tdata.stars + " stars (" + tdata.starVotes + " reviews)</p>");
+        $("#parks_card").append("<hr />");
         var tName = tdata.name; //----------------Trail name
         var trailID = tdata.id;//-----------------Trail ID number to find more info
         var tAscent = tdata.ascent;//------------Trail Ascent in imperial scale in feet (#')
