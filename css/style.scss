@@ -9,25 +9,27 @@
 
 body {
   font-family: $catamaran;
+  font-weight: bold;
 }
 
 #localeyes_logo {
-  width: 300px;
+  width: 275px;
   border-radius: 50%;
   border: color(primary) 3px solid;
+  margin: 50px;
 }
 
 #fun_area {
   text-decoration: none;
   padding: $padding;
   display: block;
-  text-transform: uppercase;
+  background: linear-gradient(
+    to bottom right,
+    color(lighter),
+    color(verylightyellow)
+  );
   height: 500px;
-  background-color: color(lighter);
   h1 {
-    background-image: url("localeyeslogo.png");
-    margin: 20px;
-    font-size: 50px;
     position: relative;
     animation: heading;
     animation-duration: 3s;
@@ -40,18 +42,38 @@ body {
     top: -50px;
   }
   100% {
-    top: 200px;
+    top: 140px;
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 140px;
+  }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 140px;
   }
 }
 
 .search-box {
   position: absolute;
-  top: 20%;
-  left: 75%;
+  top: 75%;
+  left: 76%;
   background: color(dark);
   height: 40px;
   border-radius: 40px;
-  margin: 40px;
+  width: 200px;
+  text-align: center;
 
   .search-txt {
     border: none;
@@ -59,12 +81,11 @@ body {
     outline: none;
     float: left;
     color: white;
-    transition: 0.4s;
     line-height: 40px;
-    transition: 0.24s;
-    width: 220;
+    width: 200;
     text-align: center;
     font-size: 24px;
+    padding: 5px 0;
   }
 }
 
@@ -83,7 +104,8 @@ body {
   @extend .button;
   position: absolute;
   top: 50%;
-  left: 85%;
+  left: 80%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -97,7 +119,8 @@ body {
   @extend .button;
   position: absolute;
   top: 30%;
-  left: 85%;
+  left: 80%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -111,7 +134,8 @@ body {
   @extend .button;
   position: absolute;
   top: 30%;
-  left: 85%;
+  left: 80%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -123,29 +147,10 @@ body {
 
 #intro_info {
   margin: auto;
-  width: 50%;
+  width: 40%;
   right: 50%;
   left: 50%;
   padding: 20px;
-}
-
-@-webkit-keyframes mymove {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
-}
-
-/* Standard syntax */
-@keyframes mymove {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
 }
 
 .display_none {

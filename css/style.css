@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Catamaran);
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400);
+@import url(https://fonts.googleapis.com/css?family=Catamaran:700);
 * {
   margin: 0;
   padding: 0;
@@ -6,27 +7,26 @@
 
 body {
   font-family: "Catamaran", sans-serif;
+  font-weight: bold;
 }
 
 #localeyes_logo {
-  width: 300px;
+  width: 275px;
   border-radius: 50%;
   border: #f18805 3px solid;
+  margin: 50px;
 }
 
 #fun_area {
   text-decoration: none;
   padding: 15px;
   display: block;
-  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ffff33), to(#ffff99));
+  background: linear-gradient(to bottom right, #ffff33, #ffff99);
   height: 500px;
-  background-color: #ffff33;
 }
 
 #fun_area h1 {
-  background-image: url("localeyeslogo.png");
-  margin: 20px;
-  font-size: 50px;
   position: relative;
   -webkit-animation: heading;
           animation: heading;
@@ -41,7 +41,7 @@ body {
     top: -50px;
   }
   100% {
-    top: 200px;
+    top: 140px;
   }
 }
 
@@ -50,18 +50,38 @@ body {
     top: -50px;
   }
   100% {
-    top: 200px;
+    top: 140px;
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 140px;
+  }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 140px;
   }
 }
 
 .search-box {
   position: absolute;
-  top: 20%;
-  left: 75%;
+  top: 75%;
+  left: 76%;
   background: #2f3640;
   height: 40px;
   border-radius: 40px;
-  margin: 40px;
+  width: 200px;
+  text-align: center;
 }
 
 .search-box .search-txt {
@@ -70,14 +90,11 @@ body {
   outline: none;
   float: left;
   color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
   line-height: 40px;
-  -webkit-transition: 0.24s;
-  transition: 0.24s;
-  width: 220;
+  width: 200;
   text-align: center;
   font-size: 24px;
+  padding: 5px 0;
 }
 
 .button, #submit_zip, #login_button, #logout_button {
@@ -95,7 +112,7 @@ body {
 #submit_zip {
   position: absolute;
   top: 50%;
-  left: 85%;
+  left: 80%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -109,7 +126,7 @@ body {
 #login_button {
   position: absolute;
   top: 30%;
-  left: 85%;
+  left: 80%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -123,7 +140,7 @@ body {
 #logout_button {
   position: absolute;
   top: 30%;
-  left: 85%;
+  left: 80%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -136,29 +153,10 @@ body {
 
 #intro_info {
   margin: auto;
-  width: 50%;
+  width: 40%;
   right: 50%;
   left: 50%;
   padding: 20px;
-}
-
-@-webkit-keyframes mymove {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
-}
-
-/* Standard syntax */
-@keyframes mymove {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
 }
 
 .display_none {
