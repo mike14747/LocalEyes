@@ -34,28 +34,6 @@ function parkData(data) {//data in imperial
         var tStarNum = tdata.starVotes;//---------Trails number of Star reviews
         var tDescription = tdata.summary;//-------Description Sentence of the Trail
         var tLink = tdata.url;//------------------URL to take user to trail web page on hikingproject.com
-
-        /*
-        console.log("Trail name: " + tName);
-        console.log("Location: " + tCity);
-        console.log("Latitude: " + tLat);
-        console.log("Longitude: " + tLong);
-        console.log("Trail ID Number: " + trailID);
-        console.log("Ascent in feet: " + tAscent);
-        console.log("Descent in feet: " + tDescent);
-        console.log("Trail Difficulty: " + tDiff);
-        console.log("Trail High in feet: " + tHigh);
-        console.log("Trail Low in feet: " + tLow);
-        console.log("Trail Length In Miles: " + tLength);
-        console.log("Rated: " + tStars + " Stars. By: " + tStarNum + " Votes");
-        console.log("Summary Sentence: " + tDescription);
-        console.log("large img: " + tLGimg);
-        console.log("Medium img: " + tMDimg);
-        console.log("Small img: " + tSMimg);
-        console.log("Small Square img: " + tXSimg);
-        console.log("WEB URL: " + tLink);
-        console.log("-------------------------------------------------------------------------------------");
-        */
     }
 }
 function parkSearch(latt, long) {

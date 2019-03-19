@@ -1,7 +1,3 @@
-var searchZipCode = "44129";
-
-console.log("Loaded YELP JS");
-
 function yelpZipBuild(zipData) {
 
   var data = zipData.businesses;//------------------handle to enter the business data
@@ -46,9 +42,8 @@ function yelpZipBuild(zipData) {
     console.log("-------------------------------------------------------------")
   }
 }
-function yelpZipSearch(zipCode) {
-  console.log(zipCode);
-  var queryURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location='+zipCode;
+function yelpZipSearch(zip) {
+  var queryURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location='+zip;
   $.ajax({
     url: queryURL,
     method: 'GET',
@@ -57,9 +52,7 @@ function yelpZipSearch(zipCode) {
       xhr.setRequestHeader('Authorization', 'Bearer B1I0rlGshjXHt65WqN_FCjVQZJ1u7WTRQfp1dfhoEg7cGf9XJup4IqcU8XNS25xqEYkgt2lQBIxFVJpy-txbhKYhWUUwUaiM-JDwmI1h0Maal1uPbakPpv8CNL6GXHYx');
     },
     success: function(data) {
-      console.log(data);
       yelpZipBuild(data);
     }
   });
 }
-yelpZipSearch(searchZipCode);
