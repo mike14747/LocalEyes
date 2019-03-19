@@ -17,6 +17,19 @@ body {
   margin: 50px;
 }
 
+@media (max-width: 640px) {
+  #localeyes_logo {
+    width: 200px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .mr-auto {
+    width: 100%;
+  }
+}
+
 #fun_area {
   text-decoration: none;
   padding: 15px;
@@ -26,7 +39,15 @@ body {
   height: 500px;
 }
 
+@media (max-width: 640px) {
+  #fun_area {
+    overflow: auto;
+    height: auto;
+  }
+}
+
 #fun_area h1 {
+  float: left;
   position: relative;
   -webkit-animation: heading;
           animation: heading;
@@ -36,12 +57,12 @@ body {
           animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes heading {
-  0% {
-    top: -50px;
-  }
-  100% {
-    top: 140px;
+@media (max-width: 640px) {
+  #fun_area h1 {
+    -webkit-animation-name: none;
+            animation-name: none;
+    float: none;
+    width: 100%;
   }
 }
 
@@ -54,7 +75,7 @@ body {
   }
 }
 
-@-webkit-keyframes mymove {
+@-webkit-keyframes heading {
   from {
     top: -50px;
   }
@@ -64,7 +85,7 @@ body {
 }
 
 /* Standard syntax */
-@keyframes mymove {
+@keyframes heading {
   from {
     top: -50px;
   }
@@ -73,7 +94,29 @@ body {
   }
 }
 
+#intro_info {
+  margin: auto;
+  float: left;
+  width: 40%;
+  right: 50%;
+  left: 50%;
+  padding: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  #intro_info {
+    float: none;
+    font-size: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
+
 .search-box {
+  float: clear both;
   position: absolute;
   top: 75%;
   left: 76%;
@@ -81,7 +124,7 @@ body {
   height: 40px;
   border-radius: 40px;
   width: 200px;
-  text-align: center;
+  padding: 5px, 0;
 }
 
 .search-box .search-txt {
@@ -94,7 +137,16 @@ body {
   width: 200;
   text-align: center;
   font-size: 24px;
-  padding: 5px 0;
+  padding: auto;
+}
+
+@media (max-width: 640px) {
+  .search-box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
 }
 
 .button, #submit_zip, #login_button, #logout_button {
@@ -117,6 +169,15 @@ body {
   transition: 0.4s;
 }
 
+@media (max-width: 640px) {
+  #submit_zip {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+}
+
 #submit_zip:hover {
   background-color: #e84118;
   color: #f4f4f4;
@@ -129,6 +190,15 @@ body {
   left: 80%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+@media (max-width: 640px) {
+  #login_button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
 }
 
 #login_button:hover {
@@ -145,18 +215,19 @@ body {
   transition: 0.4s;
 }
 
+@media (max-width: 640px) {
+  #logout_button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+}
+
 #logout_button:hover {
   background-color: #e84118;
   color: #f4f4f4;
   width: 240px;
-}
-
-#intro_info {
-  margin: auto;
-  width: 40%;
-  right: 50%;
-  left: 50%;
-  padding: 20px;
 }
 
 .display_none {

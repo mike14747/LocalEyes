@@ -3,25 +3,25 @@
 }
 
 @mixin widescreen {
-  @media (min-width: #{$widescreen}) {
+  @media (max-width: #{$widescreen}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop}) {
+  @media (max-width: #{$desktop}) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: #{$tablet}) {
+  @media (max-width: #{$tablet}) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (min-width: #{$mobile}) {
+  @media (max-width: #{$mobile}) {
     @content;
   }
 }
