@@ -8,19 +8,25 @@ body {
   font-family: "Catamaran", sans-serif;
 }
 
+#localeyes_logo {
+  width: 300px;
+  border-radius: 50%;
+  border: #f18805 3px solid;
+}
+
 #fun_area {
   text-decoration: none;
   padding: 15px;
   display: block;
   text-transform: uppercase;
-  height: 300px;
+  height: 500px;
   background-color: #ffff33;
 }
 
 #fun_area h1 {
+  background-image: url("localeyeslogo.png");
   margin: 20px;
   font-size: 50px;
-  line-height: 1.3;
   position: relative;
   -webkit-animation: heading;
           animation: heading;
@@ -50,12 +56,12 @@ body {
 
 .search-box {
   position: absolute;
-  top: 60%;
+  top: 20%;
   left: 75%;
   background: #2f3640;
   height: 40px;
   border-radius: 40px;
-  margin: 20px;
+  margin: 40px;
 }
 
 .search-box .search-txt {
@@ -69,14 +75,13 @@ body {
   line-height: 40px;
   -webkit-transition: 0.24s;
   transition: 0.24s;
-  padding: 0px, 0px, 4px, 0px;
   width: 220;
   text-align: center;
   font-size: 24px;
 }
 
 .button, #submit_zip, #login_button, #logout_button {
-  width: 220px;
+  width: 200px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
@@ -84,34 +89,57 @@ body {
   margin: 40px;
   border-radius: 40px;
   background-color: #f18805;
+  padding: 5px 0;
 }
 
 #submit_zip {
   position: absolute;
-  top: 35%;
-  left: 75%;
+  top: 50%;
+  left: 85%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 #submit_zip:hover {
   background-color: #e84118;
   color: #f4f4f4;
+  width: 240px;
 }
 
 #login_button {
   position: absolute;
-  top: 75%;
-  left: 75%;
+  top: 30%;
+  left: 85%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 #login_button:hover {
   background-color: #e84118;
   color: #f4f4f4;
+  width: 240px;
 }
 
 #logout_button {
   position: absolute;
-  top: 50%;
-  left: 75%;
+  top: 30%;
+  left: 85%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#logout_button:hover {
+  background-color: #e84118;
+  color: #f4f4f4;
+  width: 240px;
+}
+
+#intro_info {
+  margin: auto;
+  width: 50%;
+  right: 50%;
+  left: 50%;
+  padding: 20px;
 }
 
 @-webkit-keyframes mymove {
@@ -135,5 +163,10 @@ body {
 
 .display_none {
   display: none;
+}
+
+#footer {
+  width: 100%;
+  background-color: #ffff99;
 }
 /*# sourceMappingURL=style.css.map */

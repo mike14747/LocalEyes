@@ -5,6 +5,7 @@ $catamaran: "Catamaran", sans-serif;
 $colors: (
   primary: #f18805,
   lighter: #ffff33,
+  verylightyellow: lighten(#ffff33, 20%),
   darker: #e84118,
   light: #f4f4f4,
   dark: #2f3640
