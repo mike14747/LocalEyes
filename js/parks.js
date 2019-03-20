@@ -1,3 +1,5 @@
+"use strict"
+
 var hpapikey = '&key=200431910-75a8709c24c09cae9d1a234790e13e78';// hiking project APIkey
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
 function parkData(data) {//data in imperial 
@@ -12,29 +14,7 @@ function parkData(data) {//data in imperial
         newDiv.append("<p class='small'><b>Length: </b>" + tdata.length + " miles</p>");
         newDiv.append("<p class='small'>" + tdata.stars + " stars (" + tdata.starVotes + " reviews)</p>");
         newDiv.append("<p class='small'><b>Loc:</b> " + tdata.location + "</p>");
-        
         $("#parks_card").append(newDiv);
-        // train name => tdata.name
-        // trail ID => tdata.id
-        // ascent in feet => tdata.ascent
-        // descent in feet => tdata.descent
-        // trail difficulty => tdata.difficulty (green = easy --- greenBlue = Easy/Intermediate --- Blue = Intermediate --- blueBlack = Intermediate/Difficult --- black = Difficult --- doubleBlack = Extremely Difficult)
-        // trail high point in feet => tdata.high
-        // trail low point in feet => tdata.low
-        // trail length in miles => tdata.length
-        // IMAGE URLS
-        // Large Image URL => tdata.imgMedium
-        // Medium Image URL => tdata.imgSmallMed
-        // Small Image URL => tdata.imgSmall
-        // Small Square Image URL => tdata.imgSqSmall
-        //--------------------------------------------
-        // city and state => tdata.location
-        // Trail Latitude => tdata.latitude
-        // Trail Longitude => tdata.longitude
-        // rating in stars => tdata.stars
-        // number of reviews => tdata.starVotes
-        // description => tdata.summary
-        // trail URL on hikingproject.com => tdata.url
     }
 }
 function parkSearch(latt, long) {
