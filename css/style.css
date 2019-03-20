@@ -130,13 +130,11 @@ body {
 }
 
 .search-box {
-  position: absolute;
-  top: 75%;
-  left: 75%;
+  position: relative;
+  float: left;
   background: #2f3640;
   height: 40px;
   border-radius: 40px;
-  width: 200px;
   padding: 5px, 0;
 }
 
@@ -150,7 +148,9 @@ body {
   width: 200px;
   text-align: center;
   font-size: 24px;
-  padding: auto;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  padding: 5px 0;
 }
 
 @media (max-width: 768px) {
@@ -162,10 +162,14 @@ body {
 @media (max-width: 640px) {
   .search-box {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    position: static;
+    width: 50%;
+    margin: auto;
   }
+}
+
+.search-txt:focus {
+  width: 240px;
 }
 
 .button, #submit_zip, #login_button, #logout_button {
@@ -181,9 +185,8 @@ body {
 }
 
 #submit_zip {
-  position: absolute;
-  top: 50%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -197,9 +200,9 @@ body {
 @media (max-width: 640px) {
   #submit_zip {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    width: 50%;
+    margin: auto;
+    position: static;
   }
 }
 
@@ -210,9 +213,8 @@ body {
 }
 
 #login_button {
-  position: absolute;
-  top: 30%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -226,9 +228,9 @@ body {
 @media (max-width: 640px) {
   #login_button {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    width: 50%;
+    margin: auto;
+    position: static;
   }
 }
 
@@ -239,25 +241,24 @@ body {
 }
 
 #logout_button {
-  position: absolute;
-  top: 30%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 @media (max-width: 768px) {
   #logout_button {
-    display: inline;
+    display: inline-block;
   }
 }
 
 @media (max-width: 640px) {
   #logout_button {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    position: static;
+    width: 50%;
+    margin: auto;
   }
 }
 
@@ -286,5 +287,12 @@ body {
 #footer {
   width: 100%;
   background-color: #ffff99;
+}
+
+@media screen and (max-width: 640px) {
+  #search_div .submit_div #log_in #log_out {
+    width: 75%;
+    position: absolute;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -116,13 +116,11 @@ body {
   overflow: auto;
 }
 .search-box {
-  position: absolute;
-  top: 75%;
-  left: 75%;
+  position: relative;
+  float: left;
   background: color(dark);
   height: 40px;
   border-radius: 40px;
-  width: 200px;
   padding: 5px, 0;
 
   .search-txt {
@@ -135,7 +133,9 @@ body {
     width: 200px;
     text-align: center;
     font-size: 24px;
-    padding: auto;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    padding: 5px 0;
   }
 
   @include tablet {
@@ -144,10 +144,14 @@ body {
 
   @include mobile {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    position: static;
+    width: 50%;
+    margin: auto;
   }
+}
+
+.search-txt:focus {
+  width: 240px;
 }
 
 .button {
@@ -163,9 +167,8 @@ body {
 
 #submit_zip {
   @extend .button;
-  position: absolute;
-  top: 50%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
@@ -175,9 +178,9 @@ body {
 
   @include mobile {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    width: 50%;
+    margin: auto;
+    position: static;
   }
 }
 
@@ -189,9 +192,8 @@ body {
 
 #login_button {
   @extend .button;
-  position: absolute;
-  top: 30%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
@@ -201,9 +203,9 @@ body {
 
   @include mobile {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    width: 50%;
+    margin: auto;
+    position: static;
   }
 }
 
@@ -215,21 +217,20 @@ body {
 
 #logout_button {
   @extend .button;
-  position: absolute;
-  top: 30%;
-  left: 80%;
+  position: relative;
+  float: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
   @include tablet {
-    display: inline;
+    display: inline-block;
   }
 
   @include mobile {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    position: static;
+    width: 50%;
+    margin: auto;
   }
 }
 
@@ -256,4 +257,11 @@ body {
 #footer {
   width: 100%;
   background-color: color(verylightyellow);
+}
+
+@media screen and (max-width: 640px) {
+  #search_div .submit_div #log_in #log_out {
+    width: 75%;
+    position: absolute;
+  }
 }
