@@ -47,17 +47,6 @@
     <!-- include our bootstrap companion style sheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- d3 style sheet-->
-    <link rel="stylesheet" type="text/css" href="css/d3.css" />
-
-    <!-- Font Awesome reference -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-
     <title>LocalEyes</title>
   </head>
 
@@ -134,98 +123,86 @@
     </div>
 
     <div class="container border my-4 bg-white">
-      <div id="error_row" class="row p-2 d-none justify-content-center">
-        <h3 class="text-danger p-4">
-          '<span id="sub_zip"></span>' is not a valid zip code!
-        </h3>
-      </div>
+        <div id="error_row" class="row p-2 d-none justify-content-center">
+            <h3 class="text-danger p-4">'<span id="sub_zip"></span>' is not a valid zip code!</h3>
+        </div>
 
-      <div id="results_row" class="row p-2 d-none">
-        <div class="col">
-          <!-- current weather forecast (next 4 hours) -->
-          <div id="weather_info" class="my_card rounded m-2 d-none">
-            <div class="card_header">
-              Weather <span class="small">(next 4 hours)</span>
+        <div id="results_row" class="row p-2 d-none">
+
+            <div class="col">
+                <!-- current weather forecast (next 4 hours) -->
+                <div id="weather_info" class="my_card m-2 d-none">
+                    <div class="card_header">
+                        Weather <span class="small">(next 4 hours)</span>
+                    </div>
+                    <div id="weather_card" class="card_body">
+
+                    </div>
+                </div>
+
+                <!-- info about this zip code -->
+                <div id="zip_info" class="my_card m-2 d-none">
+                    <div id="zip_header" class="card_header p-2">
+                        This Zip
+                    </div>
+                    <div id="zip_card" class="card_body">
+
+                    </div>
+                </div>
             </div>
-            <div id="weather_card" class="card_body"></div>
-          </div>
 
-          <!-- info about this zip code -->
-          <div id="zip_info" class="my_card rounded m-2 d-none">
-            <div id="zip_header" class="card_header p-2"></div>
-            <div id="zip_card" class="card_body"></div>
-          </div>
-        </div>
+            <div id="census_table" class="col d-none">
+                <!-- census table -->
+                <table class="table-bordered census_card m-2">
+                    <thead>
+                        <tr class="card_header">
+                            <th>Demographic</th>
+                            <th id="this_zip" class="text-center">This Zip</th>
+                            <th class="text-center">US</th>
+                        </tr>
+                    </thead>
+                    <tbody id="census_tbody">
 
-        <div id="census_table" class="col d-none">
-          <!-- census table -->
-          <table class="table-bordered census_card m-2">
-            <thead>
-              <tr class="card_header">
-                <th>Demographic</th>
-                <th id="this_zip" class="text-center">---</th>
-                <th class="text-center">US</th>
-              </tr>
-            </thead>
-            <tbody id="census_tbody"></tbody>
-          </table>
-        </div>
-
-        <div id="census_info" class="col d-none">
-          <!-- census info -->
-          <div class="my_card rounded m-2">
-            <div class="card_header">
-              <span id="census_zip"></span> Census Info
+                    </tbody>
+                </table>
             </div>
-            <div id="census_card" class="card_body"></div>
-          </div>
-        </div>
 
-        <div id="census_avg_info" class="col d-none">
-          <!-- census info -->
-          <div class="my_card rounded m-2">
-            <div class="card_header">
-              Census Info (US Avg)
-            </div>
-            <div id="census_avg_card" class="card_body"></div>
-          </div>
-        </div>
+            <div id="yelp_info" class="col d-none">
+                <!-- yelp info -->
+                <div class="my_card m-2">
+                    <div class="card_header">
+                        <img src="images/Yelp_trademark_RGB_outline.png" alt="Yelp" width="200px" height="auto">
+                    </div>
+                    <div id="yelp_card" class="card_body">
 
-        <!-- bar chart-->
-        <div id="medianHouseholdIncome"></div>
-
-        <div id="yelp_info" class="col d-none">
-          <!-- yelp info -->
-          <div class="my_card rounded m-2">
-            <div class="card_header">
-              <img
-                src="images/Yelp_trademark_RGB_outline.png"
-                alt="Yelp"
-                width="200px"
-                height="auto"
-              />
+                    </div>
+                </div>
             </div>
             <div id="yelp_card" class="card_body"></div>
           </div>
         </div>
 
-        <div id="parks_info" class="col d-none">
-          <!-- park info -->
-          <div class="my_card rounded m-2">
-            <div class="card_header">
-              Outdoors
+            <div id="parks_info" class="col d-none">
+                <!-- park info -->
+                <div class="my_card m-2">
+                    <div class="card_header">
+                        Outdoors
+                    </div>
+                    <div id="parks_card" class="card_body">
+
+                    </div>
+                </div>
             </div>
-            <div id="parks_card" class="card_body"></div>
+            
           </div>
         </div>
       </div>
     </div>
-    <footer class="row border-top responsive" id="footer">
-      <div
-        class="col-sm-12 p-2 d-flex align-items-center justify-content-center"
-      >
-        <span class="small">Copyright &#169; 2019 LocalEyes</span>
-      </div>
+
+    <footer id="footer" class="container-responsive border-top">
+        <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
+            <span class="small">Copyright &#169; 2019 LocalEyes</span>
+        </div>
     </footer>
 
     <!-- our javascript -->
@@ -233,9 +210,6 @@
     <script src="js/login.js"></script>
     <script src="js/parks.js"></script>
     <script src="js/census.js"></script>
-    <!--d3 CDN-->
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="js/d3.js"></script>
     <script src="js/yelp.js"></script>
   </body>
 </html>

@@ -4,7 +4,8 @@ var imgText = "";
 
 function yelpZipBuild(zipData) {
 
-    var data = zipData.businesses;//------------------handle to enter the business data
+    // handle to enter the business data
+    var data = zipData.businesses;
 
     $("#yelp_info").removeClass("d-none");
 
@@ -40,20 +41,6 @@ function yelpZipBuild(zipData) {
         }
         $("#yelp_card").append("<p class='small'><img src='" + imgText + "' alt='" + bdata.review_count + "' class='mr-2'>" + bdata.review_count + " reviews</p>");
         $("#yelp_card").append("<hr />");
-
-        // business name => bdata.name
-        // category array => bdata.categories
-        // latitude => bdata.coordinates.latitude
-        // longitude => bdata.coordinates.longitude
-        // phone => bdata.display_phone
-        // yelp ID => bdata.id
-        // image URL => bdata.image_url
-        // is business permanently closed (FALSE||TRUE) => bdata.is_closed
-        // address string from array => bdata.location.display_address[0] + bdata.location.display_address[1]
-        // price in $ => bdata.price
-        // rating => bdata.rating
-        // number of reviews => bdata.review_count
-        // yelp web url => bdata.url
     }
 }
 function yelpZipSearch(zip) {
