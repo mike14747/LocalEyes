@@ -17,6 +17,12 @@ body {
   margin: 50px;
 }
 
+@media (max-width: 980px) {
+  #localeyes_logo {
+    width: 300px;
+  }
+}
+
 @media (max-width: 640px) {
   #localeyes_logo {
     width: 200px;
@@ -36,13 +42,18 @@ body {
   display: block;
   background: -webkit-gradient(linear, left top, right bottom, from(#ffff33), to(#ffff99));
   background: linear-gradient(to bottom right, #ffff33, #ffff99);
-  height: 500px;
+  height: 625px;
+}
+
+@media (max-width: 768px) {
+  #fun_area {
+    height: 800px;
+  }
 }
 
 @media (max-width: 640px) {
   #fun_area {
-    overflow: auto;
-    height: auto;
+    height: 900px;
   }
 }
 
@@ -69,7 +80,6 @@ body {
     float: none;
     -webkit-animation-name: none;
             animation-name: none;
-    float: none;
     width: 50%;
     display: block;
     margin: auto;
@@ -122,6 +132,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    left: 50%;
   }
 }
 
@@ -131,12 +142,11 @@ body {
 
 .search-box {
   position: absolute;
-  top: 75%;
-  left: 76%;
+  top: 78%;
+  left: 45%;
   background: #2f3640;
-  height: 40px;
+  text-align: center;
   border-radius: 40px;
-  padding: 5px, 0;
 }
 
 .search-box .search-txt {
@@ -150,57 +160,15 @@ body {
   font-size: 24px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  padding: 5px 0;
-}
-
-@media (max-width: 768px) {
-  .search-box {
-    display: inline;
-  }
-}
-
-.table-bordered th,
-.table-bordered td {
-  padding: 0.50rem;
-}
-
-tr {
-  background-color: #ffff99;
-}
-
-.desc_td {
-  font-weight: 500;
-}
-
-.my_card {
-  max-width: 250px;
-  border: 2px solid #e84118;
-}
-
-.census_card {
-  max-width: 350px;
-  border: 2px solid #e84118;
-}
-
-.card_header {
-  background-color: #f18805;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 0.50rem;
-}
-
-.card_body {
-    background-color: #ffff99;
-    padding: 1.25rem;
 }
 
 @media (max-width: 640px) {
   .search-box {
     display: block;
-    position: static;
-    width: 50%;
     margin: auto;
+    left: 25%;
+    top: 80%;
+    width: 50%;
   }
 }
 
@@ -222,15 +190,16 @@ tr {
 
 #submit_zip {
   position: absolute;
-  top: 50%;
-  left: 80%;
+  top: 85%;
+  left: 75%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 @media (max-width: 768px) {
   #submit_zip {
-    display: inline;
+    top: 85%;
+    left: 75%;
   }
 }
 
@@ -239,7 +208,8 @@ tr {
     display: block;
     width: 50%;
     margin: auto;
-    position: static;
+    top: 90%;
+    left: 50%;
   }
 }
 
@@ -251,24 +221,27 @@ tr {
 
 #login_button {
   position: absolute;
-  top: 30%;
-  left: 80%;
+  top: 85%;
+  left: 50%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 @media (max-width: 768px) {
   #login_button {
-    display: inline;
+    top: 85%;
+    left: 50%;
   }
 }
 
 @media (max-width: 640px) {
   #login_button {
     display: block;
+    position: absolute;
     width: 50%;
     margin: auto;
-    position: static;
+    top: 75%;
+    left: 50%;
   }
 }
 
@@ -280,24 +253,26 @@ tr {
 
 #logout_button {
   position: absolute;
-  top: 30%;
-  left: 80%;
+  top: 85%;
+  left: 25%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 @media (max-width: 768px) {
   #logout_button {
-    display: inline-block;
+    top: 85%;
+    left: 25%;
   }
 }
 
 @media (max-width: 640px) {
   #logout_button {
     display: block;
-    position: static;
     width: 50%;
     margin: auto;
+    top: 75%;
+    left: 50%;
   }
 }
 
@@ -328,5 +303,39 @@ tr {
 #footer {
   width: 100%;
   background-color: #ffff99;
+}
+
+.table-bordered th,
+.table-bordered td {
+  padding: 0.5rem;
+}
+
+tr {
+  background-color: #ffff99;
+}
+
+.desc_td {
+  font-weight: 500;
+  border-radius: border-radius;
+}
+
+.my_card {
+  max-width: 250px;
+  border: 2px solid #e84118;
+  border-radius: border-radius;
+}
+
+.census_card {
+  max-width: 350px;
+  border: 2px solid #e84118;
+  border-radius: border-radius;
+}
+
+.card_header {
+  background-color: #f18805;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */

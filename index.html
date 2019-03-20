@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
@@ -28,7 +38,11 @@
 
     <!-- FirebaseUI files-->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
 
     <!-- include our bootstrap companion style sheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -37,175 +51,181 @@
     <link rel="stylesheet" type="text/css" href="css/d3.css" />
 
     <!-- Font Awesome reference -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
 
     <title>LocalEyes</title>
-</head>
+  </head>
 
-<body class="bg-light">
-
+  <body class="bg-light">
     <div class="container-responsive p-4 border bg-white">
-        <header class="row border-bottom header_bg align-items-start position-relative" id="fun_area">
-            <div class="mr-auto p-2">
-                <h1 id="logo">
-                    <img src="images/localeyeslogo.png" class="w3-circle" id="localeyes_logo" alt="logo" />
-                </h1>
-            </div>
-            <!--Instructions and Information Div-->
-            <div id="intro_info">
-                <h3>Thank-you!</h3>
-                <p>
-                    Thank-you for joining us on LocalEyes. This is where anyone can go to
-                    find important and relevant information about any locality in the US.
-                    Just enter in a zip code and unlock the intricacies of location you
-                    are interested in. Log in below to begin your time of discovery.
-                </p>
+      <header
+        class="row border-bottom header_bg align-items-start position-relative"
+        id="fun_area"
+      >
+        <div class="mr-auto p-2">
+          <h1 id="logo">
+            <img
+              src="images/localeyeslogo.png"
+              class="w3-circle"
+              id="localeyes_logo"
+              alt="logo"
+            />
+          </h1>
+        </div>
+        <!--Instructions and Information Div-->
+        <div id="intro_info">
+          <h3>Thank-you!</h3>
+          <p>
+            Thank-you for joining us on LocalEyes. This is where anyone can go
+            to find important and relevant information about any locality in the
+            US. Just enter in a zip code and unlock the intricacies of location
+            you are interested in. Log in below to begin your time of discovery.
+          </p>
 
-                <p>
-                    ** Please be assured that any information shared on this site is 100%
-                    confidential and will not be shared with any other company or
-                    individual.**
-                </p>
-            </div>
-            <br />
-            <div class="login_div">
-                <!-- login/logout button area -->
-                <div id="log_out" class="display_none p-2 text-right">
-                    <button onclick="logOut()" id="logout_button">Log Out</button>
-                </div>
-                <div id="log_in" class="display_none p-2 text-right login_button">
-                    <button onclick="logIn()" id="login_button">Log In</button>
-                </div>
-            </div>
-            <div id="search_div" class="search-box">
-                <form class="d-inline-block">
-                    <input class="search-txt" id="zip_code_search" type="text" maxlength="5" placeholder="Zipcode" />
-                </form>
-            </div>
-            <div class="submit_div">
-                <button id="submit_zip" class="submit_button" type="submit">
-                    Submit
-                </button>
-            </div>
-        </header>
+          <p>
+            ** Please be assured that any information shared on this site is
+            100% confidential and will not be shared with any other company or
+            individual.**
+          </p>
+        </div>
+        <br />
+        <div class="login_div">
+          <!-- login/logout button area -->
+          <div id="log_out" class="display_none p-2 text-right">
+            <button onclick="logOut()" id="logout_button">Log Out</button>
+          </div>
+          <div id="log_in" class="display_none p-2 text-right login_button">
+            <button onclick="logIn()" id="login_button">Log In</button>
+          </div>
+        </div>
+        <div id="search_div">
+          <form class="d-inline-block">
+            <span class="search-box">
+              <input
+                class="search-txt"
+                id="zip_code_search"
+                type="text"
+                maxlength="5"
+                placeholder="Enter Zipcode"
+              />
+            </span>
+            <button id="submit_zip" class="submit_button" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </header>
     </div>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content text-center py-4">
-                <h4>LocalEyes Login</h4>
-                <div id="firebaseui-auth-container"></div>
-                <div id="loader">Loading...</div>
-            </div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-center py-4">
+          <h4>LocalEyes Login</h4>
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
         </div>
+      </div>
     </div>
 
     <div class="container border my-4 bg-white">
-        <div id="error_row" class="row p-2 d-none justify-content-center">
-            <h3 class="text-danger p-4">'<span id="sub_zip"></span>' is not a valid zip code!</h3>
+      <div id="error_row" class="row p-2 d-none justify-content-center">
+        <h3 class="text-danger p-4">
+          '<span id="sub_zip"></span>' is not a valid zip code!
+        </h3>
+      </div>
+
+      <div id="results_row" class="row p-2 d-none">
+        <div class="col">
+          <!-- current weather forecast (next 4 hours) -->
+          <div id="weather_info" class="my_card rounded m-2 d-none">
+            <div class="card_header">
+              Weather <span class="small">(next 4 hours)</span>
+            </div>
+            <div id="weather_card" class="card_body"></div>
+          </div>
+
+          <!-- info about this zip code -->
+          <div id="zip_info" class="my_card rounded m-2 d-none">
+            <div id="zip_header" class="card_header p-2"></div>
+            <div id="zip_card" class="card_body"></div>
+          </div>
         </div>
 
-        <div id="results_row" class="row p-2 d-none">
-
-            <div class="col">
-                <!-- current weather forecast (next 4 hours) -->
-                <div id="weather_info" class="my_card rounded m-2 d-none">
-                    <div class="card_header">
-                        Weather <span class="small">(next 4 hours)</span>
-                    </div>
-                    <div id="weather_card" class="card_body">
-
-                    </div>
-                </div>
-
-                <!-- info about this zip code -->
-                <div id="zip_info" class="my_card rounded m-2 d-none">
-                    <div id="zip_header" class="card_header p-2">
-
-                    </div>
-                    <div id="zip_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <div id="census_table" class="col d-none">
-                <!-- census table -->
-                <table class="table-bordered census_card m-2">
-                    <thead>
-                        <tr class="card_header">
-                            <th>Demographic</th>
-                            <th id="this_zip" class="text-center">---</th>
-                            <th class="text-center">US</th>
-                        </tr>
-                    </thead>
-                    <tbody id="census_tbody">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="census_info" class="col d-none">
-                <!-- census info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        <span id="census_zip"></span> Census Info
-                    </div>
-                    <div id="census_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <div id="census_avg_info" class="col d-none">
-                <!-- census info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        Census Info (US Avg)
-                    </div>
-                    <div id="census_avg_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- bar chart-->
-            <div id="medianHouseholdIncome">
-
-            </div>
-
-            <div id="yelp_info" class="col d-none">
-                <!-- yelp info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        <img src="images/Yelp_trademark_RGB_outline.png" alt="Yelp" width="200px" height="auto">
-                    </div>
-                    <div id="yelp_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <div id="parks_info" class="col d-none">
-                <!-- park info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        Outdoors
-                    </div>
-                    <div id="parks_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
+        <div id="census_table" class="col d-none">
+          <!-- census table -->
+          <table class="table-bordered census_card m-2">
+            <thead>
+              <tr class="card_header">
+                <th>Demographic</th>
+                <th id="this_zip" class="text-center">---</th>
+                <th class="text-center">US</th>
+              </tr>
+            </thead>
+            <tbody id="census_tbody"></tbody>
+          </table>
         </div>
+
+        <div id="census_info" class="col d-none">
+          <!-- census info -->
+          <div class="my_card rounded m-2">
+            <div class="card_header">
+              <span id="census_zip"></span> Census Info
+            </div>
+            <div id="census_card" class="card_body"></div>
+          </div>
+        </div>
+
+        <div id="census_avg_info" class="col d-none">
+          <!-- census info -->
+          <div class="my_card rounded m-2">
+            <div class="card_header">
+              Census Info (US Avg)
+            </div>
+            <div id="census_avg_card" class="card_body"></div>
+          </div>
+        </div>
+
+        <!-- bar chart-->
+        <div id="medianHouseholdIncome"></div>
+
+        <div id="yelp_info" class="col d-none">
+          <!-- yelp info -->
+          <div class="my_card rounded m-2">
+            <div class="card_header">
+              <img
+                src="images/Yelp_trademark_RGB_outline.png"
+                alt="Yelp"
+                width="200px"
+                height="auto"
+              />
+            </div>
+            <div id="yelp_card" class="card_body"></div>
+          </div>
+        </div>
+
+        <div id="parks_info" class="col d-none">
+          <!-- park info -->
+          <div class="my_card rounded m-2">
+            <div class="card_header">
+              Outdoors
+            </div>
+            <div id="parks_card" class="card_body"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer class="row border-top responsive" id="footer">
-        <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
-            <span class="small">Copyright &#169; 2019 LocalEyes</span>
-        </div>
+      <div
+        class="col-sm-12 p-2 d-flex align-items-center justify-content-center"
+      >
+        <span class="small">Copyright &#169; 2019 LocalEyes</span>
+      </div>
     </footer>
 
     <!-- our javascript -->
@@ -217,6 +237,5 @@
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="js/d3.js"></script>
     <script src="js/yelp.js"></script>
-</body>
-
+  </body>
 </html>
