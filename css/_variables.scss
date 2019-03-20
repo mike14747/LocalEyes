@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400);
+@import url(https://fonts.googleapis.com/css?family=Catamaran:700);
+
+$catamaran: "Catamaran", sans-serif;
+
+$colors: (
+  primary: #f18805,
+  lighter: #ffff33,
+  verylightyellow: lighten(#ffff33, 20%),
+  darker: #e84118,
+  light: #f4f4f4,
+  dark: #2f3640
+);
+
+$widescreen: 980px;
+$desktop: 840px;
+$tablet: 768px;
+$mobile: 640px;
+
+$container: 960px;
+$section-padding: 20px;
+
+$padding: 15px;
+$borders: 15px;
