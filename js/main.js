@@ -27,16 +27,28 @@ function weather(zip) {
     }).then(function (response) {
         if (response.cod == 200) {
             $("#weather_info").removeClass("d-none");
-            $("#weather_card").empty();
             $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'><span class='pl-4'>" + response.list[0].weather[0].main + "</span></div>");
             $("#weather_card").append("<p><b>Temperature: </b>" + Math.round(response.list[0].main.temp) + "&deg;</p>");
             $("#weather_card").append("<p><b>Humidity: </b>" + response.list[0].main.humidity + "</p>");
-            $("#weather_card").append("<p><b>Wind Speed: </b>" + Math.round(response.list[0].wind.speed) + " mph</p>");
             var dir = response.list[0].wind.deg;
-            if (dir > 337.5 && dir < 22.5) {
-                direction = "N"
+            if (dir >= 337.5 && dir < 22.5) {
+                direction = "N";
+            } else if (dir >= 22.5 && dir < 67.5) {
+                direction = "NE";
+            } else if (dir >= 67.5 && dir < 112.5) {
+                direction = "E";
+            } else if (dir >= 112.5 && dir < 157.5) {
+                direction = "SE";
+            } else if (dir >= 157.5 && dir < 202.5) {
+                direction = "S";
+            } else if (dir >= 202.5 && dir < 247.5) {
+                direction = "SW";
+            } else if (dir >= 247.5 && dir < 292.5) {
+                direction = "W";
+            } else if (dir >= 292.5 && dir < 337.5) {
+                direction = "NW";
             }
-            $("#weather_card").append("<p><b>Wind Direction: </b>" +  + "</p>");
+            $("#weather_card").append("<p><b>Wind: </b>" + Math.round(response.list[0].wind.speed) + " mph " + direction + "</p>");
         }
     });
     return;
@@ -45,6 +57,7 @@ function weather(zip) {
 function zipSearch(zip) {
     // zipcodedownload.com api key (500 free call per month)
     var apiKey = "4af80d5a852a405d9baad6ce23a015b0";
+    // new api key -> var apiKey = "d92773d2cf28477d8a92f5065339354b"
     var queryURL = "https://zipcodedownload.com:5430/Filter?format=json&citytype=d&cityname=&postalcode=" + zip + "&country=us5&key=" + apiKey;
 
     $.ajax({
@@ -52,10 +65,9 @@ function zipSearch(zip) {
         method: "GET"
     }).then(function (response) {
         if (response.length > 0) {
+            $("#error_row").addClass("d-none");
             $("#zip_info").removeClass("d-none");
-            $("#zip_header").empty();
             $("#zip_header").append(zipCode + " Info");
-            $("#zip_card").empty();
             $("#zip_card").append("<p><b>City: </b>" + response[0].city_name + "</p>");
             $("#zip_card").append("<p><b>State: </b>" + response[0].province + "</p>");
             $("#zip_card").append("<p><b>Latitude: </b>" + response[0].lat + "</p>");
@@ -64,8 +76,16 @@ function zipSearch(zip) {
             lon = response[0].lon;
             $("#zip_card").append("<p><b>Area Code: </b>" + response[0].area_code + "</p>");
             $("#zip_card").append("<p><b>Time Zone: </b>" + response[0].time_zone + "</p>");
-            // weather(lat, lon);
-            parkSearch(lat,lon);
+            weather(zipCode);
+            census(zipCode);
+            censusAvg();
+            yelpZipSearch(zipCode);
+            parkSearch(lat, lon);
+        } else {
+            // the submitted zip code was not valid
+            $("#results_row").addClass("d-none");
+            $("#error_row").removeClass("d-none");
+            $("#sub_zip").text(zipCode);
         }
     });
     return;
@@ -73,6 +93,17 @@ function zipSearch(zip) {
 
 $("#submit_zip").on("click", function (event) {
     event.preventDefault();
+    $("#weather_card").empty();
+    $("#zip_header").empty();
+    $("#zip_card").empty();
+    $("#yelp_card").empty();
+    $("#parks_card").empty();
+    $("#census_avg_card").empty();
+    $("#census_card").empty();
+    $("#census_tbody").empty();
+    for (var i = 0; i < tbody_array.length; i++) {
+        $("#census_tbody").append(tbody_array[i]);
+    }
     zipCode = $("#zip_code_search").val().trim();
     if (zipCode == "" || !zipCode.match(regExp)) {
         console.log("Validation failed");
@@ -81,9 +112,5 @@ $("#submit_zip").on("click", function (event) {
         $("#results_row").removeClass("d-none");
         $("#zip_code_search").val("");
         zipSearch(zipCode);
-        weather(zipCode);
-        census(zipCode);
-        censusAvg();
-        yelpZipSearch(zipCode);
     }
 });

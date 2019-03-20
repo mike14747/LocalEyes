@@ -46,6 +46,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#log_out").show();
     } else {
         // user is not signed in
+        $("#results_row").addClass("d-none");
         $("#search_div").hide();
         $("#log_in").show();
         $("#log_out").hide();

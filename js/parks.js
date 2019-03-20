@@ -2,38 +2,39 @@ var hpapikey = '&key=200431910-75a8709c24c09cae9d1a234790e13e78';// hiking proje
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
 function parkData(data) {//data in imperial 
     $("#parks_info").removeClass("d-none");
-    $("#parks_card").empty();
     var trails = data.trails;
 
     for (var trailIndex = 0; trailIndex < trails.length; trailIndex++) {
         var tdata = trails[trailIndex];//Trail data object handle from hiking project API
-        $("#parks_card").append("<p><b>Trail Name: </b><a href='" + tdata.url + "' target='_blank'>" + tdata.name + "</a></p>");
-        $("#parks_card").append("<img src='" + tdata.imgSmall + "' alt='" + tdata.name + "'>");
-        $("#parks_card").append("<p><b>Trail Length: </b>" + tdata.length + " miles</p>");
-        $("#parks_card").append("<p><b>Rating: </b>" + tdata.stars + " stars (" + tdata.starVotes + " reviews)</p>");
-        $("#parks_card").append("<hr />");
-        var tName = tdata.name; //----------------Trail name
-        var trailID = tdata.id;//-----------------Trail ID number to find more info
-        var tAscent = tdata.ascent;//------------Trail Ascent in imperial scale in feet (#')
-        var tDescent = tdata.descent;//-----------Trail Descent in Feet
-        var tDiff = tdata.difficulty;//-----------Trail Difficulty in color measurement
-        //green = easy --- greenBlue = Easy/Intermediate --- Blue = Intermediate --- blueBlack = Intermediate/Difficult --- black = Difficult --- doubleBlack = Extremely Difficult
-        var tHigh = tdata.high;//-----------------Trail High point in Feet
-        var tLow = tdata.low;//-------------------Trail Lowest point in Feet
-        var tLength = tdata.length;//-------------Trail Length In Miles
-        //---------------------------------------------------------------------IMAGE URLS----
-        var tLGimg = tdata.imgMedium;//-----------Large Image URL
-        var tMDimg = tdata.imgSmallMed;//---------Medium Image URL
-        var tSMimg = tdata.imgSmall;//------------Small Image URL
-        var tXSimg = tdata.imgSqSmall;//----------Small Square Image URL
-        //-----------------------------------------------------------------------------------
-        var tCity = tdata.location;//-------------City & State of Trail
-        var tLat = tdata.latitude;//--------------Trail Latitude
-        var tLong = tdata.longitude;//------------Trail Longitude
-        var tStars = tdata.stars;//---------------Trail Stars (1-5) as a point of review for the trail by hikers
-        var tStarNum = tdata.starVotes;//---------Trails number of Star reviews
-        var tDescription = tdata.summary;//-------Description Sentence of the Trail
-        var tLink = tdata.url;//------------------URL to take user to trail web page on hikingproject.com
+        var newDiv = $("<div class='clearfix border-bottom'>");
+        newDiv.append("<p><a href='" + tdata.url + "' target='_blank'>" + tdata.name + "</a></p>");
+        newDiv.append("<img src='" + tdata.imgSqSmall + "' alt='" + tdata.name + "' class='float-left mr-2 mb-1'>");
+        newDiv.append("<p class='small'><b>Length: </b>" + tdata.length + " miles</p>");
+        newDiv.append("<p class='small'>" + tdata.stars + " stars (" + tdata.starVotes + " reviews)</p>");
+        newDiv.append("<p class='small'><b>Loc:</b> " + tdata.location + "</p>");
+        
+        $("#parks_card").append(newDiv);
+        // train name => tdata.name
+        // trail ID => tdata.id
+        // ascent in feet => tdata.ascent
+        // descent in feet => tdata.descent
+        // trail difficulty => tdata.difficulty (green = easy --- greenBlue = Easy/Intermediate --- Blue = Intermediate --- blueBlack = Intermediate/Difficult --- black = Difficult --- doubleBlack = Extremely Difficult)
+        // trail high point in feet => tdata.high
+        // trail low point in feet => tdata.low
+        // trail length in miles => tdata.length
+        // IMAGE URLS
+        // Large Image URL => tdata.imgMedium
+        // Medium Image URL => tdata.imgSmallMed
+        // Small Image URL => tdata.imgSmall
+        // Small Square Image URL => tdata.imgSqSmall
+        //--------------------------------------------
+        // city and state => tdata.location
+        // Trail Latitude => tdata.latitude
+        // Trail Longitude => tdata.longitude
+        // rating in stars => tdata.stars
+        // number of reviews => tdata.starVotes
+        // description => tdata.summary
+        // trail URL on hikingproject.com => tdata.url
     }
 }
 function parkSearch(latt, long) {
