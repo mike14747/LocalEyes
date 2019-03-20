@@ -108,21 +108,11 @@
 
                     </div>
                 </div>
-
-                <!-- park info -->
-                <div id="parks_info" class="my_card rounded m-2 d-none">
-                    <div class="card_header">
-                        Outdoors
-                    </div>
-                    <div id="parks_card" class="card_body">
-
-                    </div>
-                </div>
             </div>
 
-            <div class="col">
+            <div id="census_table" class="col d-none">
                 <!-- census table -->
-                <table id="census_table" class="table-bordered census_card d-none">
+                <table class="table-bordered census_card m-2">
                     <thead>
                         <tr class="card_header">
                             <th>Demographic</th>
@@ -131,14 +121,14 @@
                         </tr>
                     </thead>
                     <tbody id="census_tbody">
-                        
+
                     </tbody>
                 </table>
             </div>
 
-            <div class="col">
+            <div id="census_info" class="col d-none">
                 <!-- census info -->
-                <div id="census_info" class="my_card rounded m-2 d-none">
+                <div class="my_card rounded m-2">
                     <div class="card_header">
                         <span id="census_zip"></span> Census Info
                     </div>
@@ -148,9 +138,9 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div id="census_avg_info" class="col d-none">
                 <!-- census info -->
-                <div id="census_avg_info" class="my_card rounded m-2 d-none">
+                <div class="my_card rounded m-2">
                     <div class="card_header">
                         Census Info (US Avg)
                     </div>
@@ -165,17 +155,29 @@
 
             </div>
 
-            <div class="col">
+            <div id="yelp_info" class="col d-none">
                 <!-- yelp info -->
-                <div id="yelp_info" class="my_card rounded m-2 d-none">
+                <div class="my_card rounded m-2">
                     <div class="card_header">
-                        Yelp
+                        <img src="images/Yelp_trademark_RGB_outline.png" alt="Yelp" width="200px" height="auto">
                     </div>
                     <div id="yelp_card" class="card_body">
 
                     </div>
                 </div>
             </div>
+
+            <div id="parks_info" class="col d-none">
+                <div class="my_card rounded m-2">
+                    <div class="card_header">
+                        Outdoors
+                    </div>
+                    <div id="parks_card" class="card_body">
+
+                    </div>
+                </div>
+            </div>
+            <!-- park info -->
 
         </div>
 
