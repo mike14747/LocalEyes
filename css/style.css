@@ -21,6 +21,19 @@ p {
 
 .my_card {
   max-width: 250px;
+  border: 2px solid #e84118;
+}
+
+.card_header {
+  background-color: #f18805;
+  text-align: center;
+  font-size: 20px;
+  padding: 0.50rem;
+}
+
+.card_body {
+    background-color: #ffff99;
+    padding: 1.25rem;
 }
 
 @media only screen and (max-width: 640px) {

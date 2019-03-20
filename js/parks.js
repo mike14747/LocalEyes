@@ -7,7 +7,7 @@ function parkData(data) {//data in imperial
 
     for (var trailIndex = 0; trailIndex < trails.length; trailIndex++) {
         var tdata = trails[trailIndex];//Trail data object handle from hiking project API
-        var newDiv = $("<div class='clearfix border-bottom p-2'>");
+        var newDiv = $("<div class='clearfix border-bottom'>");
         newDiv.append("<p><a href='" + tdata.url + "' target='_blank'>" + tdata.name + "</a></p>");
         newDiv.append("<img src='" + tdata.imgSqSmall + "' alt='" + tdata.name + "' class='float-left mr-2 mb-1'>");
         newDiv.append("<p class='small'><b>Length: </b>" + tdata.length + " miles</p>");
