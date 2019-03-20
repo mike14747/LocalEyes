@@ -33,19 +33,12 @@
     <!-- include our bootstrap companion style sheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- d3 style sheet-->
-    <link rel="stylesheet" type="text/css" href="css/d3.css" />
-
-    <!-- Font Awesome reference -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
-
     <title>LocalEyes</title>
 </head>
 
 <body class="bg-light">
 
-    <div class="container-responsive p-4 border bg-white">
+    <div class="container-responsive border bg-white">
         <header class="row border-bottom header_bg align-items-start position-relative" id="fun_area">
             <div class="mr-auto p-2">
                 <h1 id="logo">
@@ -111,7 +104,7 @@
 
             <div class="col">
                 <!-- current weather forecast (next 4 hours) -->
-                <div id="weather_info" class="my_card rounded m-2 d-none">
+                <div id="weather_info" class="my_card m-2 d-none">
                     <div class="card_header">
                         Weather <span class="small">(next 4 hours)</span>
                     </div>
@@ -121,9 +114,9 @@
                 </div>
 
                 <!-- info about this zip code -->
-                <div id="zip_info" class="my_card rounded m-2 d-none">
+                <div id="zip_info" class="my_card m-2 d-none">
                     <div id="zip_header" class="card_header p-2">
-
+                        This Zip
                     </div>
                     <div id="zip_card" class="card_body">
 
@@ -137,7 +130,7 @@
                     <thead>
                         <tr class="card_header">
                             <th>Demographic</th>
-                            <th id="this_zip" class="text-center">---</th>
+                            <th id="this_zip" class="text-center">This Zip</th>
                             <th class="text-center">US</th>
                         </tr>
                     </thead>
@@ -147,38 +140,9 @@
                 </table>
             </div>
 
-            <div id="census_info" class="col d-none">
-                <!-- census info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        <span id="census_zip"></span> Census Info
-                    </div>
-                    <div id="census_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <div id="census_avg_info" class="col d-none">
-                <!-- census info -->
-                <div class="my_card rounded m-2">
-                    <div class="card_header">
-                        Census Info (US Avg)
-                    </div>
-                    <div id="census_avg_card" class="card_body">
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- bar chart-->
-            <div id="medianHouseholdIncome">
-
-            </div>
-
             <div id="yelp_info" class="col d-none">
                 <!-- yelp info -->
-                <div class="my_card rounded m-2">
+                <div class="my_card m-2">
                     <div class="card_header">
                         <img src="images/Yelp_trademark_RGB_outline.png" alt="Yelp" width="200px" height="auto">
                     </div>
@@ -190,7 +154,7 @@
 
             <div id="parks_info" class="col d-none">
                 <!-- park info -->
-                <div class="my_card rounded m-2">
+                <div class="my_card m-2">
                     <div class="card_header">
                         Outdoors
                     </div>
@@ -202,7 +166,8 @@
 
         </div>
     </div>
-    <footer class="row border-top responsive" id="footer">
+
+    <footer id="footer" class="container-responsive border-top">
         <div class="col-sm-12 p-2 d-flex align-items-center justify-content-center">
             <span class="small">Copyright &#169; 2019 LocalEyes</span>
         </div>
@@ -213,9 +178,6 @@
     <script src="js/login.js"></script>
     <script src="js/parks.js"></script>
     <script src="js/census.js"></script>
-    <!--d3 CDN-->
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="js/d3.js"></script>
     <script src="js/yelp.js"></script>
 </body>
 
