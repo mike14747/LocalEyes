@@ -282,6 +282,8 @@ body {
   width: 240px;
 }
 
+/* mike's styles after this point */
+
 .display_none {
   display: none;
 }
@@ -338,4 +340,10 @@ tr {
   font-weight: 500;
   padding: 0.5rem;
 }
+
+.card_body {
+  background-color: #ffff99;
+  padding: 1.25rem;
+}
+
 /*# sourceMappingURL=style.css.map */
