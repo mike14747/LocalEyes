@@ -3,7 +3,6 @@ function yelpZipBuild(zipData) {
     var data = zipData.businesses;//------------------handle to enter the business data
 
     $("#yelp_info").removeClass("d-none");
-    $("#yelp_card").empty();
 
     for (var bizIndex = 0; bizIndex < data.length; bizIndex++) {
         var bdata = data[bizIndex]; // Grabs the index of the business object we are currently on

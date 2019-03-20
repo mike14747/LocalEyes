@@ -2,7 +2,6 @@ var hpapikey = '&key=200431910-75a8709c24c09cae9d1a234790e13e78';// hiking proje
 var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=';
 function parkData(data) {//data in imperial 
     $("#parks_info").removeClass("d-none");
-    $("#parks_card").empty();
     var trails = data.trails;
 
     for (var trailIndex = 0; trailIndex < trails.length; trailIndex++) {

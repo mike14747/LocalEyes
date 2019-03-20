@@ -27,7 +27,6 @@ function weather(zip) {
     }).then(function (response) {
         if (response.cod == 200) {
             $("#weather_info").removeClass("d-none");
-            $("#weather_card").empty();
             $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'><span class='pl-4'>" + response.list[0].weather[0].main + "</span></div>");
             $("#weather_card").append("<p><b>Temperature: </b>" + Math.round(response.list[0].main.temp) + "&deg;</p>");
             $("#weather_card").append("<p><b>Humidity: </b>" + response.list[0].main.humidity + "</p>");
@@ -67,9 +66,7 @@ function zipSearch(zip) {
         if (response.length > 0) {
             $("#error_row").addClass("d-none");
             $("#zip_info").removeClass("d-none");
-            $("#zip_header").empty();
             $("#zip_header").append(zipCode + " Info");
-            $("#zip_card").empty();
             $("#zip_card").append("<p><b>City: </b>" + response[0].city_name + "</p>");
             $("#zip_card").append("<p><b>State: </b>" + response[0].province + "</p>");
             $("#zip_card").append("<p><b>Latitude: </b>" + response[0].lat + "</p>");
@@ -95,6 +92,17 @@ function zipSearch(zip) {
 
 $("#submit_zip").on("click", function (event) {
     event.preventDefault();
+    $("#weather_card").empty();
+    $("#zip_header").empty();
+    $("#zip_card").empty();
+    $("#yelp_card").empty();
+    $("#parks_card").empty();
+    $("#census_avg_card").empty();
+    $("#census_card").empty();
+    $("#census_tbody").empty();
+    for (var i = 0; i < tbody_array.length; i++) {
+        $("#census_tbody").append(tbody_array[i]);
+    }
     zipCode = $("#zip_code_search").val().trim();
     if (zipCode == "" || !zipCode.match(regExp)) {
         console.log("Validation failed");
