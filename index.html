@@ -46,7 +46,7 @@
 
 <body class="bg-light">
 
-    <div class="container border my-4 bg-white">
+    <div class="container-responsive p-4 border bg-white">
 
         <header class="row border-bottom header_bg align-items-start position-relative">
             <div class="mr-auto p-2">
@@ -62,14 +62,18 @@
                 </div>
             </div>
             <div id="search_div" class="search-box">
-                <input class="search-txt" id="zip_code_search" type="text" maxlength="5" placeholder="Enter Zipcode" />
-                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-            </div>
-            <div class="submit_div" <button id="submit_zip" class="submit_button" type="submit">
-                Submit
-                </button>
+                <form>
+                    <input class="search-txt" id="zip_code_search" type="text" maxlength="5"
+                        placeholder="Enter Zipcode" />
+                    <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+                    <button id="submit_zip" class="submit_button" type="submit">Submit</button>
+                </form>
             </div>
         </header>
+
+        <div id="error_row" class="row p-2 d-none justify-content-center">
+            <h3 class="text-danger p-4">The submitted zip code '<span id="sub_zip"></span>' was not valid!</h3>
+        </div>
 
         <!-- Login Modal -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
@@ -82,67 +86,79 @@
             </div>
         </div>
 
-        <div class="row my-1">
-            <div class="mx-auto">
-                <p id="user_state" class="m-0"></p>
-            </div>
-        </div>
-
         <div id="results_row" class="row p-2 d-none">
-            <!-- info about this zip code -->
-            <div id="zip_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div id="zip_header" class="card-header">
-                    
-                </div>
-                <div id="zip_card" class="card-body">
 
+            <div class="col">
+                <!-- current weather forecast (next 4 hours) -->
+                <div id="weather_info" class="my_card border rounded m-2 d-none">
+                    <div class="bg-light p-2 font-weight-bolder">
+                        Current Weather
+                    </div>
+                    <div id="weather_card" class="p-2">
+
+                    </div>
+                </div>
+
+                <!-- info about this zip code -->
+                <div id="zip_info" class="my_card border rounded m-2 d-none">
+                    <div id="zip_header" class="bg-light p-2 font-weight-bolder">
+
+                    </div>
+                    <div id="zip_card" class="p-2">
+
+                    </div>
+                </div>
+
+                <!-- park info -->
+                <div id="parks_info" class="my_card border rounded m-2 d-none">
+                    <div class="bg-light p-2 font-weight-bolder">
+                        Outdoors
+                    </div>
+                    <div id="parks_card">
+
+                    </div>
                 </div>
             </div>
-            <!-- current weather forecast (next 4 hours) -->
-            <div id="weather_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div class="card-header">
-                    Current Weather
-                </div>
-                <div id="weather_card" class="card-body">
 
+            <div class="col">
+                <!-- census info -->
+                <div id="census_info" class="my_card border rounded m-2 d-none">
+                    <div class="bg-light p-2 font-weight-bolder">
+                        Census Info (this zip code)
+                    </div>
+                    <div id="census_card" class="p-2">
+
+                    </div>
                 </div>
             </div>
-            <!-- census info -->
-            <div id="census_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div class="card-header">
-                    Census.gov Info (this zip)
-                </div>
-                <div id="census_card" class="card-body">
 
+            <div class="col">
+                <!-- census info -->
+                <div id="census_avg_info" class="my_card border rounded m-2 d-none">
+                    <div class="bg-light p-2 font-weight-bolder">
+                        Census Info (US Avg)
+                    </div>
+                    <div id="census_avg_card" class="p-2">
+
+                    </div>
                 </div>
             </div>
-            <!-- census info -->
-            <div id="census_avg_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div class="card-header">
-                    Census.gov (US Avg)
-                </div>
-                <div id="census_avg_card" class="card-body">
 
-                </div>
-            </div>
+
+
 
             <!-- bar chart-->
-            <div id="medianHouseholdIncome"></div>
-            <!-- park info -->
-            <div id="parks_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div class="card-header">
-                    Parks
-                </div>
-                <div id="parks_card" class="card-body">
+            <div id="medianHouseholdIncome">
 
-                </div>
             </div>
+
+
             <!-- yelp info -->
-            <div id="yelp_info" class="card m-2 d-none" style="max-width: 25rem;">
-                <div class="card-header">
+            <div id="yelp_info" class="my_card border rounded m-2 d-none">
+                <div class="bg-light p-2 font-weight-bolder">
                     Yelp
                 </div>
-                <div id="yelp_card" class="card-body">
+                <div id="yelp_card" class="p-2">
 
                 </div>
             </div>

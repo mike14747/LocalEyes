@@ -4,8 +4,6 @@ function census(zip) {
     var apiKey = "599c1fceaf4dbdd36e8883a85282f4b2cbb5cd65";
     var queryURL = "https://api.census.gov/data/2017/acs/acs5/profile?get=NAME,DP05_0001E,DP05_0019PE,DP05_0024PE,DP05_0005PE,DP05_0006PE,DP05_0007PE,DP05_0008PE,DP05_0009PE,DP05_0010PE,DP05_0011PE,DP05_0012PE,DP05_0013PE,DP05_0014PE,DP05_0015PE,DP05_0016PE,DP05_0017PE,DP05_0004E,DP05_0002PE,DP05_0003PE,DP03_0062E,DP03_0063E,DP05_0018E,DP04_0089E,DP04_0134E,DP02_0060PE,DP03_0119PE,DP05_0037PE,DP05_0038PE,DP05_0071PE,DP05_0044PE,DP05_0039PE,DP05_0052PE,DP05_0057PE,DP05_0035PE&for=zip+code+tabulation+area:" + zip + "&key=" + apiKey;
 
-    // houseHoldIncome array
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,8 +38,18 @@ function census(zip) {
             houseHoldIncome.push(localMHI);
             $("#census_card").append("<p><b>Mean Household Income: </b>" + response[1][21] + "</p>");
             $("#census_card").append("<p><b>Median Age: </b>" + response[1][22] + "</p>");
-            $("#census_card").append("<p><b>Median Home Value: </b>" + response[1][23] + "</p>");
-            $("#census_card").append("<p><b>Gross Rent: </b>" + response[1][24] + "</p>");
+            if (response[1][23] < 0) {
+                var medHomeValue = "N/A";
+            } else {
+                var medHomeValue = response[1][23];
+            }
+            $("#census_card").append("<p><b>Median Home Value: </b>" + medHomeValue + "</p>");
+            if (response[1][24] < 0) {
+                var grossRent = "N/A";
+            } else {
+                var grossRent = response[1][24];
+            }
+            $("#census_card").append("<p><b>Gross Rent: </b>" + grossRent + "</p>");
             var hsGradRate = 100 - response[1][25];
             $("#census_card").append("<p><b>25yo+ Graduted HS: </b>" + hsGradRate + "</p>");
             $("#census_card").append("<p><b>Poverty Rate: </b>" + response[1][26] + "</p>");

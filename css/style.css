@@ -19,6 +19,10 @@ p {
   margin: 0.25rem 0;
 }
 
+.my_card {
+  max-width: 250px;
+}
+
 @media only screen and (max-width: 640px) {
   .search-box:hover > .search-txt {
     width: 240px;

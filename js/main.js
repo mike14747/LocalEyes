@@ -31,12 +31,25 @@ function weather(zip) {
             $("#weather_card").append("<div id='w'_icon'><img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Current Conditions'><span class='pl-4'>" + response.list[0].weather[0].main + "</span></div>");
             $("#weather_card").append("<p><b>Temperature: </b>" + Math.round(response.list[0].main.temp) + "&deg;</p>");
             $("#weather_card").append("<p><b>Humidity: </b>" + response.list[0].main.humidity + "</p>");
-            $("#weather_card").append("<p><b>Wind Speed: </b>" + Math.round(response.list[0].wind.speed) + " mph</p>");
             var dir = response.list[0].wind.deg;
-            if (dir > 337.5 && dir < 22.5) {
-                direction = "N"
+            if (dir >= 337.5 && dir < 22.5) {
+                direction = "N";
+            } else if (dir >= 22.5 && dir < 67.5) {
+                direction = "NE";
+            } else if (dir >= 67.5 && dir < 112.5) {
+                direction = "E";
+            } else if (dir >= 112.5 && dir < 157.5) {
+                direction = "SE";
+            } else if (dir >= 157.5 && dir < 202.5) {
+                direction = "S";
+            } else if (dir >= 202.5 && dir < 247.5) {
+                direction = "SW";
+            } else if (dir >= 247.5 && dir < 292.5) {
+                direction = "W";
+            } else if (dir >= 292.5 && dir < 337.5) {
+                direction = "NW";
             }
-            $("#weather_card").append("<p><b>Wind Direction: </b>" +  + "</p>");
+            $("#weather_card").append("<p><b>Wind: </b>" + Math.round(response.list[0].wind.speed) + " mph " + direction + "</p>");
         }
     });
     return;
@@ -52,6 +65,7 @@ function zipSearch(zip) {
         method: "GET"
     }).then(function (response) {
         if (response.length > 0) {
+            $("#error_row").addClass("d-none");
             $("#zip_info").removeClass("d-none");
             $("#zip_header").empty();
             $("#zip_header").append(zipCode + " Info");
@@ -64,8 +78,16 @@ function zipSearch(zip) {
             lon = response[0].lon;
             $("#zip_card").append("<p><b>Area Code: </b>" + response[0].area_code + "</p>");
             $("#zip_card").append("<p><b>Time Zone: </b>" + response[0].time_zone + "</p>");
-            // weather(lat, lon);
-            parkSearch(lat,lon);
+            weather(zipCode);
+            census(zipCode);
+            censusAvg();
+            yelpZipSearch(zipCode);
+            parkSearch(lat, lon);
+        } else {
+            // the submitted zip code was not valid
+            $("#results_row").addClass("d-none");
+            $("#error_row").removeClass("d-none");
+            $("#sub_zip").text(zipCode);
         }
     });
     return;
@@ -81,9 +103,5 @@ $("#submit_zip").on("click", function (event) {
         $("#results_row").removeClass("d-none");
         $("#zip_code_search").val("");
         zipSearch(zipCode);
-        weather(zipCode);
-        census(zipCode);
-        censusAvg();
-        yelpZipSearch(zipCode);
     }
 });
