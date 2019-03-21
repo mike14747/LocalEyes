@@ -312,7 +312,7 @@ body {
 }
 
 tr {
-  background-color: #ffff99;
+  background-color: #ffff33;
 }
 
 .desc_td {
@@ -335,7 +335,6 @@ tr {
 }
 
 .card_header {
-  background-color: #f18805;
   background-color: #f18805;
   text-align: center;
   font-size: 20px;
