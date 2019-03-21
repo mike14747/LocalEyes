@@ -291,11 +291,13 @@ tr {
 }
 
 .my_card {
+  max-width: 250px;
   border: 2px solid #e84118;
   border-radius: border-radius;
 }
 
 .census_card {
+  max-width: 350px;
   border: 2px solid #e84118;
   border-radius: border-radius;
 }
