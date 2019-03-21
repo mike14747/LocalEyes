@@ -73,11 +73,9 @@ function zipSearch(zip) {
             $("#parks_card").empty();
             $("#census_card").empty();
             $("#census_tbody").empty();
-            // dynamically create the census table using these 2 variables and the tbody_array
-            newRow = "<tr><td class='desc_td'>";
-            endRow = "---</td></tr>";
-            for (var i = 0; i < tbody_array.length; i++) {
-                $("#census_tbody").append(newRow + tbody_array[i] + endRow);
+            // dynamically create the rows and cells in the census data table
+            for (var i = 0; i < tbody_object.length; i++) {
+                $("#census_tbody").append("<tr><td class='desc_td'>" + tbody_object[i].name + "</td><td id='czip" + tbody_object[i].id + "' class='text-right'>---</td><td id='cus" + tbody_object[i].id + "' class='text-right'>---</td></tr>");
             }
             $("#error_row").addClass("d-none");
             $("#zip_info").removeClass("d-none");
