@@ -189,12 +189,6 @@ function census(zip) {
             $("#czip32").text(response[1][32] + "%");
             $("#czip33").text(response[1][33] + "%");
             $("#czip34").text(response[1][34] + "%");
-            /*
-            var localMHI = {
-                name: "local",
-                value: response[1][20]
-            }
-            */
         }
     });
     return;
