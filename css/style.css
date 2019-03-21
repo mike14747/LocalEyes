@@ -53,7 +53,7 @@ body {
 
 @media (max-width: 640px) {
   #fun_area {
-    height: 900px;
+    height: 1100px;
   }
 }
 
@@ -131,6 +131,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
     width: 80%;
     left: 50%;
   }
@@ -282,8 +283,6 @@ body {
   width: 240px;
 }
 
-/* mike's styles after this point */
-
 .display_none {
   display: none;
 }
@@ -323,17 +322,20 @@ tr {
 
 .my_card {
   max-width: 250px;
-  border: 2px solid #e84118;
+  border: 2px solid;
+  background-color: #e84118;
   border-radius: border-radius;
 }
 
 .census_card {
   max-width: 350px;
-  border: 2px solid #e84118;
+  border: 2px solid;
+  background-color: #e84118;
   border-radius: border-radius;
 }
 
 .card_header {
+  background-color: #f18805;
   background-color: #f18805;
   text-align: center;
   font-size: 20px;
@@ -342,8 +344,11 @@ tr {
 }
 
 .card_body {
-  background-color: #ffff99;
-  padding: 1.25rem;
+  background-color: #ffff33;
+  padding: 0.5rem;
 }
 
+p {
+  margin-top: 0.5rem 0;
+}
 /*# sourceMappingURL=style.css.map */

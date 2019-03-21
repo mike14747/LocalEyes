@@ -47,7 +47,7 @@ body {
   }
 
   @include mobile {
-    height: 900px;
+    height: 1100px;
   }
 
   h1 {
@@ -253,8 +253,6 @@ body {
   width: 240px;
 }
 
-/* mike's styles after this point */
-
 .display_none {
   display: none;
 }
@@ -282,7 +280,7 @@ body {
 }
 
 tr {
-  background-color: #ffff99;
+  background-color: color(verylightyellow);
 }
 
 .desc_td {
@@ -292,18 +290,21 @@ tr {
 
 .my_card {
   max-width: 250px;
-  border: 2px solid #e84118;
+  border: 2px solid;
+  background-color: color(darker);
   border-radius: border-radius;
 }
 
 .census_card {
   max-width: 350px;
-  border: 2px solid #e84118;
+  border: 2px solid;
+  background-color: color(darker);
   border-radius: border-radius;
 }
 
 .card_header {
   background-color: #f18805;
+  background-color: color(primary);
   text-align: center;
   font-size: 20px;
   font-weight: 500;
@@ -311,6 +312,10 @@ tr {
 }
 
 .card_body {
-  background-color: #ffff99;
-  padding: 1.25rem;
+  background-color: color(lighter);
+  padding: 0.5rem;
+}
+
+p {
+  margin-top: 0.5rem 0;
 }
