@@ -138,7 +138,11 @@ var tbody_object = [
 
 function census(zip) {
     var apiKey = "599c1fceaf4dbdd36e8883a85282f4b2cbb5cd65";
-    var queryURL = "https://api.census.gov/data/2017/acs/acs5/profile?get=NAME,DP05_0001E,DP05_0019PE,DP05_0024PE,DP05_0005PE,DP05_0006PE,DP05_0007PE,DP05_0008PE,DP05_0009PE,DP05_0010PE,DP05_0011PE,DP05_0012PE,DP05_0013PE,DP05_0014PE,DP05_0015PE,DP05_0016PE,DP05_0017PE,DP05_0004E,DP05_0002PE,DP05_0003PE,DP03_0062E,DP03_0063E,DP05_0018E,DP04_0089E,DP04_0134E,DP02_0060PE,DP03_0119PE,DP05_0037PE,DP05_0038PE,DP05_0071PE,DP05_0044PE,DP05_0039PE,DP05_0052PE,DP05_0057PE,DP05_0035PE&for=zip+code+tabulation+area:" + zip + "&key=" + apiKey;
+    var queryURL =
+        "https://api.census.gov/data/2017/acs/acs5/profile?get=NAME,DP05_0001E,DP05_0019PE,DP05_0024PE,DP05_0005PE,DP05_0006PE,DP05_0007PE,DP05_0008PE,DP05_0009PE,DP05_0010PE,DP05_0011PE,DP05_0012PE,DP05_0013PE,DP05_0014PE,DP05_0015PE,DP05_0016PE,DP05_0017PE,DP05_0004E,DP05_0002PE,DP05_0003PE,DP03_0062E,DP03_0063E,DP05_0018E,DP04_0089E,DP04_0134E,DP02_0060PE,DP03_0119PE,DP05_0037PE,DP05_0038PE,DP05_0071PE,DP05_0044PE,DP05_0039PE,DP05_0052PE,DP05_0057PE,DP05_0035PE&for=zip+code+tabulation+area:" +
+        zip +
+        "&key=" +
+        apiKey;
 
     $.ajax({
         url: queryURL,
@@ -147,7 +151,7 @@ function census(zip) {
         if (response.length > 0) {
             $("#census_table").removeClass("d-none");
             $("#this_zip").text(zipCode);
-            $("#czip1").text(Number(response[1][1]).toLocaleString('en'));
+            $("#czip1").text(Number(response[1][1]).toLocaleString("en"));
             $("#czip22").text(response[1][22]);
             $("#czip2").text(response[1][2] + "%");
             $("#czip3").text(response[1][3] + "%");
@@ -166,17 +170,17 @@ function census(zip) {
             $("#czip16").text(response[1][16] + "%");
             $("#czip18").text(response[1][18] + "%");
             $("#czip19").text(response[1][19] + "%");
-            $("#czip20").text(Number(response[1][20]).toLocaleString('en'));
-            $("#czip21").text(Number(response[1][21]).toLocaleString('en'));
+            $("#czip20").text(Number(response[1][20]).toLocaleString("en"));
+            $("#czip21").text(Number(response[1][21]).toLocaleString("en"));
             if (response[1][23] < 0) {
                 $("#czip23").text("N/A");
             } else {
-                $("#czip23").text(Number(response[1][23]).toLocaleString('en'));
+                $("#czip23").text(Number(response[1][23]).toLocaleString("en"));
             }
             if (response[1][24] < 0) {
                 $("#czip24").text("N/A");
             } else {
-                $("#czip24").text(Number(response[1][24]).toLocaleString('en'));
+                $("#czip24").text(Number(response[1][24]).toLocaleString("en"));
             }
             var hsGradRate = 100 - response[1][25];
             $("#czip25").text(hsGradRate + "%");
@@ -196,14 +200,16 @@ function census(zip) {
 
 function censusAvg() {
     var apiKey = "599c1fceaf4dbdd36e8883a85282f4b2cbb5cd65";
-    var queryURL = "https://api.census.gov/data/2017/acs/acs5/profile?get=NAME,DP05_0001E,DP05_0019PE,DP05_0024PE,DP05_0005PE,DP05_0006PE,DP05_0007PE,DP05_0008PE,DP05_0009PE,DP05_0010PE,DP05_0011PE,DP05_0012PE,DP05_0013PE,DP05_0014PE,DP05_0015PE,DP05_0016PE,DP05_0017PE,DP05_0004E,DP05_0002PE,DP05_0003PE,DP03_0062E,DP03_0063E,DP05_0018E,DP04_0089E,DP04_0134E,DP02_0060PE,DP03_0119PE,DP05_0037PE,DP05_0038PE,DP05_0071PE,DP05_0044PE,DP05_0039PE,DP05_0052PE,DP05_0057PE,DP05_0035PE&for=us:1&key=" + apiKey;
+    var queryURL =
+        "https://api.census.gov/data/2017/acs/acs5/profile?get=NAME,DP05_0001E,DP05_0019PE,DP05_0024PE,DP05_0005PE,DP05_0006PE,DP05_0007PE,DP05_0008PE,DP05_0009PE,DP05_0010PE,DP05_0011PE,DP05_0012PE,DP05_0013PE,DP05_0014PE,DP05_0015PE,DP05_0016PE,DP05_0017PE,DP05_0004E,DP05_0002PE,DP05_0003PE,DP03_0062E,DP03_0063E,DP05_0018E,DP04_0089E,DP04_0134E,DP02_0060PE,DP03_0119PE,DP05_0037PE,DP05_0038PE,DP05_0071PE,DP05_0044PE,DP05_0039PE,DP05_0052PE,DP05_0057PE,DP05_0035PE&for=us:1&key=" +
+        apiKey;
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         if (response.length > 0) {
-            $("#cus1").text(Number(response[1][1]).toLocaleString('en'));
+            $("#cus1").text(Number(response[1][1]).toLocaleString("en"));
             $("#cus22").text(response[1][22]);
             $("#cus2").text(response[1][2] + "%");
             $("#cus3").text(response[1][3] + "%");
@@ -222,10 +228,10 @@ function censusAvg() {
             $("#cus16").text(response[1][16] + "%");
             $("#cus18").text(response[1][18] + "%");
             $("#cus19").text(response[1][19] + "%");
-            $("#cus20").text(Number(response[1][20]).toLocaleString('en'));
-            $("#cus21").text(Number(response[1][21]).toLocaleString('en'));
-            $("#cus23").text(Number(response[1][23]).toLocaleString('en'));
-            $("#cus24").text(Number(response[1][24]).toLocaleString('en'));
+            $("#cus20").text(Number(response[1][20]).toLocaleString("en"));
+            $("#cus21").text(Number(response[1][21]).toLocaleString("en"));
+            $("#cus23").text(Number(response[1][23]).toLocaleString("en"));
+            $("#cus24").text(Number(response[1][24]).toLocaleString("en"));
             var hsGradRate = 100 - response[1][25];
             $("#cus25").text(hsGradRate + "%");
             $("#cus26").text(response[1][26] + "%");
