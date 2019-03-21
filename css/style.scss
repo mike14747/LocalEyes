@@ -289,14 +289,12 @@ tr {
 }
 
 .my_card {
-  max-width: 250px;
   border: 2px solid;
   background-color: color(darker);
   border-radius: border-radius;
 }
 
 .census_card {
-  max-width: 350px;
   border: 2px solid;
   background-color: color(darker);
   border-radius: border-radius;
@@ -313,8 +311,4 @@ tr {
 .card_body {
   background-color: color(lighter);
   padding: 0.5rem;
-}
-
-p {
-  margin-top: 0.5rem 0;
 }
