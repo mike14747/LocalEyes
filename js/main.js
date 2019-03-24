@@ -75,7 +75,7 @@ function zipSearch(zip) {
             $("#census_tbody").empty();
             // dynamically create the rows and cells in the census data table
             for (var i = 0; i < tbody_object.length; i++) {
-                $("#census_tbody").append("<tr><td class='desc_td'>" + tbody_object[i].name + "</td><td id='czip" + tbody_object[i].id + "' class='text-right'>---</td><td id='cus" + tbody_object[i].id + "' class='text-right'>---</td></tr>");
+                $("#census_tbody").append("<tr><td class='desc_td'>" + tbody_object[i].name + "</td><td id='czip" + i + "' class='text-right'>---</td><td id='cus" + i + "' class='text-right'>---</td></tr>");
             }
             $("#error_row").addClass("d-none");
             $("#zip_info").removeClass("d-none");
