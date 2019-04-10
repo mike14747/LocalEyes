@@ -58,7 +58,7 @@ function weather(zip) {
 
 function zipSearch(zip) {
     // zipcodedownload.com api key (500 free call per month)
-    var apiKey = "d92773d2cf28477d8a92f5065339354b";
+    var apiKey = "4af80d5a852a405d9baad6ce23a015b0";
     var queryURL = "https://zipcodedownload.com:5430/Filter?format=json&citytype=d&cityname=&postalcode=" + zip + "&country=us5&key=" + apiKey;
 
     $.ajax({
