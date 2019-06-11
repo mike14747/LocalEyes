@@ -56,7 +56,7 @@ One of the contributers to this application will respond to you as quickly as po
 
 ##### The Contributers to this project are:
 
-* Mike Gullo
-* Michelle Williams
+* [Mike Gullo](https://mike14747.github.io/)
+* [Michelle Williams](https://github.com/letscook1)
 * Brian Arth
-* Vincent Shury
+* [Vincent Shury](https://vincent440.github.io/)
